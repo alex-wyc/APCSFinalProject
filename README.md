@@ -13,8 +13,9 @@ ChangeLog
 
 2014-12-22:
 
-1337. DW
-            * Initial commits
+<ul>
+  <li>DW<ul>
+    <ul>1337. DW Initial commits
 
 9001. WYC
             * Basic formatting class added, can read color, old, italic, underline and strikethrough
