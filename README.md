@@ -8,12 +8,13 @@ File hierarchy:
 * A class the translates pieces of html code into 
 *
 
-<h1>ChangeLog:</h1>
+ChangeLog
+=========
 
 2014-12-22:
 
-DW
-  * Initial commits
+1.      DW
+             * Initial commits
 
-WYC
-  * Basic formatting class added, can read color, old, italic, underline and strikethrough
+245245. WYC
+             * Basic formatting class added, can read color, old, italic, underline and strikethrough
