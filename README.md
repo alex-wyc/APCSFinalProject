@@ -8,7 +8,7 @@ File hierarchy:
 * A class the translates pieces of html code into 
 *
 
-ChangeLog:
+<h1>ChangeLog:</h1>
 
 2014-12-22:
 
