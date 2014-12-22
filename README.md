@@ -11,7 +11,9 @@ File hierarchy:
 ChangeLog:
 
 2014-12-22:
-  DW
+
+DW
   * Initial commits
-  WYC
+
+WYC
   * Basic formatting class added, can read color, old, italic, underline and strikethrough
