@@ -20,3 +20,5 @@ ChangeLog
 2014-12-22: Yicheng - Basic formatting class added, can read color, old, italic, underline and strikethrough
 
 2014-12-26: Yicheng - URL to sourcecode added, returns entire source, body and/or head from specified url
+
+2014-12-27: Yicheng - Tried to implement Reg-Ex to search for head, title, paragraph, body and other stuff, WIP
