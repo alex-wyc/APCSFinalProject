@@ -6,6 +6,7 @@ import java.util.ArrayList;
 public class URLtoSource {
 
 	// Variables
+	int start, end;
 	String source = "";
 	String head = "";
 	String body = "";
@@ -13,7 +14,8 @@ public class URLtoSource {
 	ArrayList<String> paragraphs = new ArrayList<String>();
 
 	// Reg ex stuff for finding head and body
-	Pattern headPat = Pattern.compile("<head.*>.*</head>", Pattern.CASE_INSENSITIVE);
+	Pattern headPatS = Pattern.compile("<head.*>", Pattern.CASE_INSENSITIVE);
+	Pattern headPatE = Pattern.compile("</head>", Pattern.CASE_INSENSITIVE);
 	Pattern bodyPat = Pattern.compile("<body.*>.*</body>", Pattern.CASE_INSENSITIVE);
 	Pattern paragraphPat = Pattern.compile("<p.*>.*</p>", Pattern.CASE_INSENSITIVE);
 	Pattern titlePat = Pattern.compile("<title.*>.*</title>", Pattern.CASE_INSENSITIVE);
@@ -38,8 +40,17 @@ public class URLtoSource {
 			e.printStackTrace();
 		}
 
-		Matcher headFinder = headPat.matcher(source);
-		head = headFinder.group();
+		System.out.println(source);
+
+		Matcher headSFinder = headPatS.matcher(source);
+		start = headSFinder.end();
+
+		System.out.println("Head1 found");
+
+		Matcher headEFinder = headPatE.matcher(source);
+		end = headEFinder.start();
+
+		head = source.substring(start, end);
 
 		System.out.println("Head found");
 
