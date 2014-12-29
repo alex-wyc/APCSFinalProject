@@ -22,3 +22,5 @@ ChangeLog
 2014-12-26: Yicheng - URL to sourcecode added, returns entire source, body and/or head from specified url
 
 2014-12-27: Yicheng - Tried to implement Reg-Ex to search for head, title, paragraph, body and other stuff, WIP
+
+2014-12-28: Yicheng - Reg-Ex isolation for paragraphs, title, body and head all working properly, going to store lists and tables next.
