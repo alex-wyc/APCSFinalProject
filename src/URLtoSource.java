@@ -22,9 +22,11 @@ public class URLtoSource {
 	Pattern titlePatE = Pattern.compile("\\</title\\>", Pattern.CASE_INSENSITIVE);
 	Pattern paragraphPatS = Pattern.compile("\\<p*\\>", Pattern.CASE_INSENSITIVE);
 	Pattern paragraphPatE = Pattern.compile("\\</p\\>", Pattern.CASE_INSENSITIVE);
-	
+	Pattern headingPatS = Pattern.compile("\\<h[1-9]*\\>", Pattern.CASE_INSENSITIVE);
+	Pattern headingPatE = Pattern.compile("\\</h[1-9]*\\>", Pattern.CASE_INSENSITIVE);
+
 	// Constructors
-	public URLtoSource(String site) {
+	public URLtoSource(String site) throws Exception {
 
 		try {
 
@@ -35,12 +37,13 @@ public class URLtoSource {
 			String inputLine;
 
 			while ((inputLine = br.readLine()) != null) {
-				source = source + inputLine + "\n";
+				source = source + inputLine.replaceAll("\t", "");
 			}
 
 			br.close();
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.out.println("Corrupt website or site does not exist, program will now exit.");
+			System.exit(1);
 		}
 
 		//System.out.println(source);
@@ -95,6 +98,7 @@ public class URLtoSource {
 		Matcher paragraphEFinder = paragraphPatE.matcher(body);
 
 		while (paragraphSFinder.find() && paragraphEFinder.find()) {
+			System.out.println(paragraphSFinder.group());
 			paragraphs.add(body.substring(paragraphSFinder.end(), paragraphEFinder.start()));
 		}
 	}
