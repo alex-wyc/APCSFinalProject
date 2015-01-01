@@ -14,16 +14,14 @@ public class URLtoSource {
 	ArrayList<String> paragraphs = new ArrayList<String>();
 
 	// Reg ex stuff for finding head and body
-	Pattern headPatS = Pattern.compile("\\<head*\\>", Pattern.CASE_INSENSITIVE);
+	Pattern headPatS = Pattern.compile("\\<head.*?\\>", Pattern.CASE_INSENSITIVE);
 	Pattern headPatE = Pattern.compile("\\</head\\>", Pattern.CASE_INSENSITIVE);
-	Pattern bodyPatS = Pattern.compile("\\<body*\\>", Pattern.CASE_INSENSITIVE);
+	Pattern bodyPatS = Pattern.compile("\\<body.*?\\>", Pattern.CASE_INSENSITIVE);
 	Pattern bodyPatE = Pattern.compile("\\</body\\>", Pattern.CASE_INSENSITIVE);
-	Pattern titlePatS = Pattern.compile("\\<title*\\>", Pattern.CASE_INSENSITIVE);
+	Pattern titlePatS = Pattern.compile("\\<title.*?\\>", Pattern.CASE_INSENSITIVE);
 	Pattern titlePatE = Pattern.compile("\\</title\\>", Pattern.CASE_INSENSITIVE);
-	Pattern paragraphPatS = Pattern.compile("\\<p*\\>", Pattern.CASE_INSENSITIVE);
-	Pattern paragraphPatE = Pattern.compile("\\</p\\>", Pattern.CASE_INSENSITIVE);
-	Pattern headingPatS = Pattern.compile("\\<h[1-9]*\\>", Pattern.CASE_INSENSITIVE);
-	Pattern headingPatE = Pattern.compile("\\</h[1-9]*\\>", Pattern.CASE_INSENSITIVE);
+	Pattern paragraphPatS = Pattern.compile("\\<p.*?\\>|\\<h[1-9].*?\\>", Pattern.CASE_INSENSITIVE);
+	Pattern paragraphPatE = Pattern.compile("\\</p\\>|\\</h[1-9]\\>", Pattern.CASE_INSENSITIVE);
 
 	// Constructors
 	public URLtoSource(String site) throws Exception {
@@ -94,12 +92,32 @@ public class URLtoSource {
 
 		title = head.substring(start,end);
 
+		Format titlef = new Format(title);
+		titlef.setBold();
+		titlef.setUnderline();
+		
+		title = titlef.getResult();
+
 		Matcher paragraphSFinder = paragraphPatS.matcher(body);
 		Matcher paragraphEFinder = paragraphPatE.matcher(body);
 
-		while (paragraphSFinder.find() && paragraphEFinder.find()) {
-			System.out.println(paragraphSFinder.group());
-			paragraphs.add(body.substring(paragraphSFinder.end(), paragraphEFinder.start()));
+		boolean pFind = paragraphSFinder.find() && paragraphEFinder.find();
+		String currentParagraph = null;
+
+		while (pFind) {
+
+			currentParagraph = body.substring(paragraphSFinder.end(), paragraphEFinder.start());
+			Format pf = new Format(currentParagraph);
+
+			if (paragraphSFinder.group().substring(0,2).equals("<h")) {
+				pf.setBold();
+			}
+
+			currentParagraph = pf.getResult();
+
+			paragraphs.add(currentParagraph);
+			
+			pFind = paragraphSFinder.find() && paragraphEFinder.find();
 		}
 	}
 

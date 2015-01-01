@@ -24,11 +24,7 @@ public class Driver {
 
 		clearScreen();
 
-		Format title = new Format(site.getTitle());
-		title.setBold();
-		title.setUnderline();
-
-		System.out.println(title.getResult());
+		System.out.println(site.getTitle());
 
 		System.out.println();
 		
