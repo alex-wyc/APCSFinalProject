@@ -18,3 +18,10 @@ ChangeLog
 2014-12-27: Yicheng - Tried to implement Reg-Ex to search for head, title, paragraph, body and other stuff, WIP
 
 2015-01-01: Yicheng - Finally fixed reg-ex... adding support for subtitles within the body and better paragraph support, still have to take care of tables and lists
+
+TO-DO-LIST
+===========
+* A list handeling class
+* A table haneling class
+* An paragraph formatter
+* A hyperlink handeling class
