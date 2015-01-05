@@ -112,7 +112,7 @@ public class URLtoSource {
 
 			if (pstarter.substring(0,2).equals("<h")) {
 				Format pf = new Format(currentParagraph);
-				if (pstarter.charAt(2) < 5) {
+				if (pstarter.charAt(2) < '5') {
 					pf.setBold();
 				}
 				else {
