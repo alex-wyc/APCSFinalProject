@@ -20,8 +20,8 @@ public class URLtoSource {
 	Pattern bodyPatE = Pattern.compile("\\</body\\>", Pattern.CASE_INSENSITIVE);
 	Pattern titlePatS = Pattern.compile("\\<title.*?\\>", Pattern.CASE_INSENSITIVE);
 	Pattern titlePatE = Pattern.compile("\\</title\\>", Pattern.CASE_INSENSITIVE);
-	Pattern paragraphPatS = Pattern.compile("\\<p.*?\\>|\\<h[1-9].*?\\>|\\<ul.*?\\>|\\<ol.*?\\>", Pattern.CASE_INSENSITIVE);
-	Pattern paragraphPatE = Pattern.compile("\\</p\\>|\\</h[1-9]\\>|\\</ul\\>|\\</ol\\>", Pattern.CASE_INSENSITIVE);
+	Pattern paragraphPatS = Pattern.compile("\\<p.*?\\>|\\<h[1-9].*?\\>|\\<ul.*?\\>|\\<ol.*?\\>|\\<table.*?\\>", Pattern.CASE_INSENSITIVE);
+	Pattern paragraphPatE = Pattern.compile("\\</p\\>|\\</h[1-9]\\>|\\</ul\\>|\\</ol\\>|\\</table\\>", Pattern.CASE_INSENSITIVE);
 
 	// Constructors
 	public URLtoSource(String site) throws Exception {
