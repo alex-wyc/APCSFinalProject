@@ -20,8 +20,8 @@ public class URLtoSource {
 	Pattern bodyPatE = Pattern.compile("\\</body\\>", Pattern.CASE_INSENSITIVE);
 	Pattern titlePatS = Pattern.compile("\\<title.*?\\>", Pattern.CASE_INSENSITIVE);
 	Pattern titlePatE = Pattern.compile("\\</title\\>", Pattern.CASE_INSENSITIVE);
-	Pattern paragraphPatS = Pattern.compile("\\<p.*?\\>|\\<h[1-9].*?\\>", Pattern.CASE_INSENSITIVE);
-	Pattern paragraphPatE = Pattern.compile("\\</p\\>|\\</h[1-9]\\>", Pattern.CASE_INSENSITIVE);
+	Pattern paragraphPatS = Pattern.compile("\\<p.*?\\>|\\<h[1-9].*?\\>|\\<ul.*?\\>|\\<ol.*?\\>", Pattern.CASE_INSENSITIVE);
+	Pattern paragraphPatE = Pattern.compile("\\</p\\>|\\</h[1-9]\\>|\\</ul\\>|\\</ol\\>", Pattern.CASE_INSENSITIVE);
 
 	// Constructors
 	public URLtoSource(String site) throws Exception {
@@ -107,10 +107,24 @@ public class URLtoSource {
 		while (pFind) {
 
 			currentParagraph = body.substring(paragraphSFinder.end(), paragraphEFinder.start());
-			Format pf = new Format(currentParagraph);
 
-			if (paragraphSFinder.group().substring(0,2).equals("<h")) {
-				pf.setBold();
+			pstarter = paragraphSFinder.group();
+
+			if (pstarter.substring(0,2).equals("<h")) {
+				Format pf = new Format(currentParagraph);
+				if (pstarter.charAt(2) < 5) {
+					pf.setBold();
+				}
+				else {
+					pf.setUnderline();
+				}
+			}
+
+			if (pstarter.substring(0,3).equals("<ul")) {
+				UnorderedListFormatter pf = new UnorderedListFormatter(currentParagraph);
+			}
+			else if (pstarter.substring(0,3).equals("<ol")) {
+				OrderedListFormatter pf = new OrderedListFormatter(currentParagraph);
 			}
 
 			currentParagraph = pf.getResult();
