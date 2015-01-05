@@ -11,12 +11,6 @@ File hierarchy:
 ChangeLog
 =========
 
-2014-12-22:
-
-<ul>
-  <li>DW</li>
-    <ul>1337. DW Initial commits
-
 2014-12-22: Yicheng - Basic formatting class added, can read color, old, italic, underline and strikethrough
 
 2014-12-26: Yicheng - URL to sourcecode added, returns entire source, body and/or head from specified url
