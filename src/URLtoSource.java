@@ -120,11 +120,9 @@ public class URLtoSource {
 				}
 			}
 
-			if (pstarter.substring(0,3).equals("<ul")) {
-				UnorderedListFormatter pf = new UnorderedListFormatter(currentParagraph);
-			}
-			else if (pstarter.substring(0,3).equals("<ol")) {
-				OrderedListFormatter pf = new OrderedListFormatter(currentParagraph);
+			if (pstarter.substring(0,3).equals("<ul") || pstarter.substring(0,3).equals("<ol")) {
+				currentParagraph = pstarter + currentParagraph + paragraphEFinder.group();
+				ListFormatter pf = new ListFormatter(currentParagraph);
 			}
 
 			currentParagraph = pf.getResult();
