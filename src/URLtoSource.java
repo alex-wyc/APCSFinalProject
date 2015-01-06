@@ -13,7 +13,7 @@ public class URLtoSource {
 	String title = "";
 	ArrayList<String> paragraphs = new ArrayList<String>();
 
-	// Reg ex stuff for finding head and body
+	// Regex stuff for finding head and body and cr@p
 	Pattern headPatS = Pattern.compile("\\<head.*?\\>", Pattern.CASE_INSENSITIVE);
 	Pattern headPatE = Pattern.compile("\\</head\\>", Pattern.CASE_INSENSITIVE);
 	Pattern bodyPatS = Pattern.compile("\\<body.*?\\>", Pattern.CASE_INSENSITIVE);
@@ -22,6 +22,14 @@ public class URLtoSource {
 	Pattern titlePatE = Pattern.compile("\\</title\\>", Pattern.CASE_INSENSITIVE);
 	Pattern paragraphPatS = Pattern.compile("\\<p.*?\\>|\\<h[1-9].*?\\>|\\<ul.*?\\>|\\<ol.*?\\>|\\<table.*?\\>", Pattern.CASE_INSENSITIVE);
 	Pattern paragraphPatE = Pattern.compile("\\</p\\>|\\</h[1-9]\\>|\\</ul\\>|\\</ol\\>|\\</table\\>", Pattern.CASE_INSENSITIVE);
+
+    // Regex patterns for finding <table> cr@p
+    Pattern trPatS = Patter.compile("\\<th.*?\\>", Pattern.CASE_INSENSITIVE);
+    Pattern trPatE = Patter.compile("\\</th\\>", Pattern.CASE_INSENSITIVE);
+    Pattern trPatS = Patter.compile("\\<tr.*?\\>", Pattern.CASE_INSENSITIVE);
+    Pattern trPatE = Patter.compile("\\</tr\\>", Pattern.CASE_INSENSITIVE);
+    Pattern tdPatS = Patter.compile("\\<td.*?\\>", Pattern.CASE_INSENSITIVE);
+    Pattern trPatE = Patter.compile("\\</td\\>", Pattern.CASE_INSENSITIVE);
 
 	// Constructors
 	public URLtoSource(String site) throws Exception {
@@ -124,7 +132,12 @@ public class URLtoSource {
 				currentParagraph = pstarter + currentParagraph + paragraphEFinder.group();
 				ListFormatter pf = new ListFormatter(currentParagraph);
 			}
-
+                        
+            // table cr@p
+            if (pstarter.substring(0,6).equals("<table")) {
+                    TableFormatter pf = new TableFormatter(currentParagraph);
+            }
+                        
 			currentParagraph = pf.getResult();
 
 			paragraphs.add(currentParagraph);
