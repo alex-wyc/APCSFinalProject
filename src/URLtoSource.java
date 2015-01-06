@@ -23,13 +23,13 @@ public class URLtoSource {
 	Pattern paragraphPatS = Pattern.compile("\\<p.*?\\>|\\<h[1-9].*?\\>|\\<ul.*?\\>|\\<ol.*?\\>|\\<table.*?\\>", Pattern.CASE_INSENSITIVE);
 	Pattern paragraphPatE = Pattern.compile("\\</p\\>|\\</h[1-9]\\>|\\</ul\\>|\\</ol\\>|\\</table\\>", Pattern.CASE_INSENSITIVE);
 
-        // Regex patterns for finding <table> cr@p
-        Pattern trPatS = Patter.compile("\\<tr.*?\\>", Pattern.CASE_INSENSITIVE);
-        Pattern tdPatS = Patter.compile("\\<td.*?\\>", Pattern.CASE_INSENSITIVE);
-        Pattern trPatS = Patter.compile("\\<tr.*?\\>", Pattern.CASE_INSENSITIVE);
-        Pattern trPatS = Patter.compile("\\<tr.*?\\>", Pattern.CASE_INSENSITIVE);
-        Pattern trPatS = Patter.compile("\\<tr.*?\\>", Pattern.CASE_INSENSITIVE);
-        Pattern trPatS = Patter.compile("\\<tr.*?\\>", Pattern.CASE_INSENSITIVE);
+    // Regex patterns for finding <table> cr@p
+    Pattern trPatS = Patter.compile("\\<th.*?\\>", Pattern.CASE_INSENSITIVE);
+    Pattern trPatE = Patter.compile("\\</th\\>", Pattern.CASE_INSENSITIVE);
+    Pattern trPatS = Patter.compile("\\<tr.*?\\>", Pattern.CASE_INSENSITIVE);
+    Pattern trPatE = Patter.compile("\\</tr\\>", Pattern.CASE_INSENSITIVE);
+    Pattern tdPatS = Patter.compile("\\<td.*?\\>", Pattern.CASE_INSENSITIVE);
+    Pattern trPatE = Patter.compile("\\</td\\>", Pattern.CASE_INSENSITIVE);
 
 	// Constructors
 	public URLtoSource(String site) throws Exception {
@@ -135,10 +135,10 @@ public class URLtoSource {
 				OrderedListFormatter pf = new OrderedListFormatter(currentParagraph);
 			}
                         
-                        // table cr@p
-                        if (pstarter.substring(0,6).equals("<table")) {
-                                TableFormatter pf = new TableFormatter(currentParagraph);
-                        }
+            // table cr@p
+            if (pstarter.substring(0,6).equals("<table")) {
+                    TableFormatter pf = new TableFormatter(currentParagraph);
+            }
                         
 			currentParagraph = pf.getResult();
 

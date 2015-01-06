@@ -17,7 +17,7 @@ public class TableFormatter {
     // Methods
     
     public String getResult() {
-	return result;
+		return result;
     }
     
     
