@@ -13,7 +13,7 @@ public class URLtoSource {
 	String title = "";
 	ArrayList<String> paragraphs = new ArrayList<String>();
 
-	// Regex stuff for finding head and body and cr@p
+	// Regex stuff for finding head and body and stuff
 	Pattern headPatS = Pattern.compile("\\<head.*?\\>", Pattern.CASE_INSENSITIVE);
 	Pattern headPatE = Pattern.compile("\\</head\\>", Pattern.CASE_INSENSITIVE);
 	Pattern bodyPatS = Pattern.compile("\\<body.*?\\>", Pattern.CASE_INSENSITIVE);
