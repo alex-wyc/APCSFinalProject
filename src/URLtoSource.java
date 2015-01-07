@@ -23,7 +23,7 @@ public class URLtoSource {
 	Pattern paragraphPatS = Pattern.compile("\\<p.*?\\>|\\<h[1-9].*?\\>|\\<ul.*?\\>|\\<ol.*?\\>|\\<table.*?\\>", Pattern.CASE_INSENSITIVE);
 	Pattern paragraphPatE = Pattern.compile("\\</p\\>|\\</h[1-9]\\>|\\</ul\\>|\\</ol\\>|\\</table\\>", Pattern.CASE_INSENSITIVE);
 
-    // Regex patterns for finding <table> cr@p
+    // Regex patterns for finding <table> stuff
     // Placed here instead of line 140 just because
     Pattern thPatS = Pattern.compile("\\<th.*?\\>", Pattern.CASE_INSENSITIVE);
     Pattern thPatE = Pattern.compile("\\</th\\>", Pattern.CASE_INSENSITIVE);
@@ -134,10 +134,8 @@ public class URLtoSource {
 				ListFormatter pf = new ListFormatter(currentParagraph);
 			}
                         
-                        // table cr@p
                         if (pstarter.substring(0,6).equals("<table")) {
                                 TableFormatter pf = new TableFormatter(currentParagraph);
-                                pf.
                         }
                         
 			currentParagraph = pf.getResult();
