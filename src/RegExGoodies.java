@@ -1,6 +1,6 @@
-import java.util.*;
+import java.util.regex.*;
 
-public RegExGoodies {
+public class RegExGoodies {
 	// psudo-class for static reg-ex goodies.
 
 	public static String replace(String original, String regExPat, String replacement) {
@@ -8,13 +8,17 @@ public RegExGoodies {
 		Matcher match = pat.matcher(original);
 		String out = "";
 
+		System.out.println(match.toString());
+		System.out.println(original);
+
 		try {
 			int replaceS = match.start();
 			int replaceE = match.end();
 			out = original.substring(0,replaceS) + replacement + original.substring(replaceE);
 			return out;
 		}
-		catch {
+		catch (Exception e) {
+			e.printStackTrace();
 			return original;
 		}
 	}
@@ -35,8 +39,8 @@ public RegExGoodies {
 
 			return out;
 		}
-		catch {
-			return original
+		catch (Exception e) {
+			return original;
 		}
 	}
 }
