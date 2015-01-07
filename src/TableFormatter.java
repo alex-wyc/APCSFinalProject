@@ -20,5 +20,8 @@ public class TableFormatter {
 		return result;
     }
     
-    
+    int tableWidth() {
+        int w;
+        for (
+    }
 }

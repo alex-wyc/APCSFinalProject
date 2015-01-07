@@ -25,12 +25,12 @@ public class URLtoSource {
 
     // Regex patterns for finding <table> cr@p
     // Placed here instead of line 140 just because
-    Pattern thPatS = Patter.compile("\\<th.*?\\>", Pattern.CASE_INSENSITIVE);
-    Pattern thPatE = Patter.compile("\\</th\\>", Pattern.CASE_INSENSITIVE);
-    Pattern trPatS = Patter.compile("\\<tr.*?\\>", Pattern.CASE_INSENSITIVE);
-    Pattern trPatE = Patter.compile("\\</tr\\>", Pattern.CASE_INSENSITIVE);
-    Pattern tdPatS = Patter.compile("\\<td.*?\\>", Pattern.CASE_INSENSITIVE);
-    Pattern tdPatE = Patter.compile("\\</td\\>", Pattern.CASE_INSENSITIVE);
+    Pattern thPatS = Pattern.compile("\\<th.*?\\>", Pattern.CASE_INSENSITIVE);
+    Pattern thPatE = Pattern.compile("\\</th\\>", Pattern.CASE_INSENSITIVE);
+    Pattern trPatS = Pattern.compile("\\<tr.*?\\>", Pattern.CASE_INSENSITIVE);
+    Pattern trPatE = Pattern.compile("\\</tr\\>", Pattern.CASE_INSENSITIVE);
+    Pattern tdPatS = Pattern.compile("\\<td.*?\\>", Pattern.CASE_INSENSITIVE);
+    Pattern tdPatE = Pattern.compile("\\</td\\>", Pattern.CASE_INSENSITIVE);
 
 	// Constructors
 	public URLtoSource(String site) throws Exception {
@@ -134,16 +134,11 @@ public class URLtoSource {
 				ListFormatter pf = new ListFormatter(currentParagraph);
 			}
                         
-            // table cr@p
-            if (pstarter.substring(0,6).equals("<table")) {
-                
-                TableFormatter pf = new TableFormatter(currentParagraph);
-                
-                // Dunno how many tables there are???
-                while() {
-                    Matcher 
-                }
-            }
+                        // table cr@p
+                        if (pstarter.substring(0,6).equals("<table")) {
+                                TableFormatter pf = new TableFormatter(currentParagraph);
+                                pf.
+                        }
                         
 			currentParagraph = pf.getResult();
 
