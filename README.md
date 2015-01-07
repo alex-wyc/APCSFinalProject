@@ -21,6 +21,8 @@ ChangeLog
 
 2015-01-06: Dalton - Nothing, but typo correcting
 
+2015-01-06: Yicheng - List handeling class half-working.
+
 TO-DO-LIST
 ===========
 * A list-handling class
