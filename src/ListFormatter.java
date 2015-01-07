@@ -16,11 +16,11 @@ public class ListFormatter {
 
 	}
 
-	private ArrayList<String> orderedHandeler(String html) {
+	private ArrayList<String> orderedHandler(String html) {
 
 	}
 
-	private ArrayList<String> unOrderedHandeler(String html) {
+	private ArrayList<String> unorderedHandler(String html) {
 
 	}
 }
