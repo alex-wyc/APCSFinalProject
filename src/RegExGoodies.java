@@ -1,7 +1,7 @@
 import java.util.regex.*;
 
-public class RegExGoodies {
-	// psudo-class for static reg-ex goodies.
+public RegExGoodies {
+	// pseudo-class for static reg-ex goodies.
 
 	public static String replace(String original, String regExPat, String replacement) {
 		Pattern pat = Pattern.compile(regExPat);

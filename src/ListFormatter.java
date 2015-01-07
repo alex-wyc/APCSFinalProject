@@ -46,6 +46,5 @@ public class ListFormatter {
 			preamble = preamble + "\t";
 		}
 		preamble = preamble + "> ";
-
 	}
 }
