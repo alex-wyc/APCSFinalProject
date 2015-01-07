@@ -37,6 +37,39 @@ public class ListFormatter {
 
 		while (elFind) {
 
+			String id = listElPatFinderS.group();
+
+			if (id.substring(0,2).equals("<ol")) {
+				int sublistBegin = listElPatFinderS.end();
+				
+				while (!(listElPatFinderE.group().equals("</ol"))) {
+					// We skip over the content of the sublist
+				}
+
+				int sublistEnd = listElPatFinderE.start();
+
+				// RECURSION!
+				out.addAll(orderedHandeler(html.substring(sublistBegin, sublistEnd), index + 1));
+			}
+
+			else if (id.substring(0,2).equals("<ul")) {
+				int sublistBegin = listElPatFinderS.end();
+
+				while (!(listElPatFinderE.group().equals("</ul"))) {
+					// We skip over the content of the sublist
+				}
+
+				int sublistEnd = listElPatFinderE.start();
+				// RECURSION!
+				out.addAll(unOrderedHandeler(html.substring(sublistBegin, sublistEnd), index + 1));
+			}
+
+			else {
+				// If this is a normal string
+				String content = html.substring(listElPatFinderS.end(), listElPatFinderE.start());
+				out.add(pramble + counter + ". " + content)
+				counter++;
+			}
 		}
 	}
 
@@ -46,5 +79,49 @@ public class ListFormatter {
 			preamble = preamble + "\t";
 		}
 		preamble = preamble + "> ";
+
+		ArrayList<String> out = new ArrayList<String>();
+
+		Matcher listElPatFinderS = listElPatS.matcher(html);
+		Matcher listElPatFinderE = listElPatE.matcher(html);
+
+		boolean elFind = listElPatFinderS.find() && listElPatFinderE.find();
+
+		while (elFind) {
+
+			String id = listElPatFinderS.group();
+
+			if (id.substring(0,2).equals("<ol")) {
+				int sublistBegin = listElPatFinderS.end();
+				
+				while (!(listElPatFinderE.group().equals("</ol"))) {
+					// We skip over the content of the sublist
+				}
+
+				int sublistEnd = listElPatFinderE.start();
+
+				// RECURSION!
+				out.addAll(orderedHandeler(html.substring(sublistBegin, sublistEnd), index + 1));
+			}
+
+			else if (id.substring(0,2).equals("<ul")) {
+				int sublistBegin = listElPatFinderS.end();
+
+				while (!(listElPatFinderE.group().equals("</ul"))) {
+					// We skip over the content of the sublist
+				}
+
+				int sublistEnd = listElPatFinderE.start();
+				// RECURSION!
+				out.addAll(unOrderedHandeler(html.substring(sublistBegin, sublistEnd), index + 1));
+			}
+
+			else {
+				// If this is a normal string
+				String content = html.substring(listElPatFinderS.end(), listElPatFinderE.start());
+				out.add(pramble + counter + ". " + content)
+				counter++;
+			}
+		}
 	}
 }
