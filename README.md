@@ -21,7 +21,9 @@ ChangeLog
 
 2015-01-06: Dalton - Nothing, but typo correcting
 
-2015-01-06: Yicheng - List- handling class half-working.
+2015-01-06: Yicheng - List-handling class half-working
+
+2015-01-07: Dalton - Last time I try to fix Yicheng's spelling and composition, made some tables stuff
 
 TO-DO-LIST
 ===========
