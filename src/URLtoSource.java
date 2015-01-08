@@ -129,14 +129,18 @@ public class URLtoSource {
 				}
 			}
 
-			if (pstarter.substring(0,3).equals("<ul") || pstarter.substring(0,3).equals("<ol")) {
-				currentParagraph = pstarter + currentParagraph + paragraphEFinder.group();
-				ListFormatter pf = new ListFormatter(currentParagraph);
+			if (pstarter.substring(0,3).equals("<ul")) {
+				ListFormatter pf = new ListFormatter(currentParagraph, false);
+			}
+
+			else if (pstarter.substring(0,3).equals("<ol")) {
+				ListFormatter pf = new ListFormatter(currentParagraph, true);
+			
 			}
                         
-                        if (pstarter.substring(0,6).equals("<table")) {
-                                TableFormatter pf = new TableFormatter(currentParagraph);
-                        }
+            if (pstarter.substring(0,6).equals("<table")) {
+            	TableFormatter pf = new TableFormatter(currentParagraph);
+            }
                         
 			currentParagraph = pf.getResult();
 
