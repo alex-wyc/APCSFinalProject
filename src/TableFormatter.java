@@ -2,7 +2,7 @@ import java.util.regex.*;
 import java.util.ArrayList;
 
 public class TableFormatter {
-    // Take in currentParagraph in URLtoSource.java,
+    // Take in currentParagraph from URLtoSource.java,
     // Breaks stuff into 2-D ArrayList structure,
     // Then spits it out as one string. I guess.
 
@@ -13,11 +13,15 @@ public class TableFormatter {
     String result;
     
     ArrayList< ArrayList<String> > grid = new ArrayList< ArrayList<String> >();
-
+    
+    Pattern trPatS = Pattern.compile("\\<tr.*?\\>", Pattern.CASE_INSENSITIVE);
+    Pattern trPatE = Pattern.compile("\\</tr\\>", Pattern.CASE_INSENSITIVE);
+    Pattern thPatS = Pattern.compile("\\<th.*?\\>", Pattern.CASE_INSENSITIVE);
+    Pattern thPatE = Pattern.compile("\\</th\\>", Pattern.CASE_INSENSITIVE);
     Pattern tdPatS = Pattern.compile("\\<td.*?\\>", Pattern.CASE_INSENSITIVE);
     Pattern tdPatE = Pattern.compile("\\</td\\>", Pattern.CASE_INSENSITIVE);
-    
-    
+
+
     int thisRowWidth;
 
     // Constructor
@@ -25,6 +29,13 @@ public class TableFormatter {
     public TableFormatter(String s) {
         original = s;
         result = s;
+
+	Matcher trSFinder = trPatS.matcher(s);
+	Matcher trEFinder = trPatE.matcher(s);
+	Matcher thSFinder = thPatS.matcher(s);
+	Matcher thEFinder = thPatE.matcher(s);
+	Matcher tdSFinder = tdPatS.matcher(s);
+	Matcher tdEFinder = tdPatE.matcher(s);
     }
     
     // Methods
@@ -33,9 +44,8 @@ public class TableFormatter {
 	return result;
     }
     
-    void demolish() {
-        // Fills up the ArrayList thing
-
+    void fillLists() {
+	
     }
 
     int tableWidth() {
@@ -43,7 +53,8 @@ public class TableFormatter {
         return w;
     }
 
-    void MISSION_CONTROL() {
-        // YEP
+    void doStuff() {
+	this.fillLists();
+	
     }
 }
