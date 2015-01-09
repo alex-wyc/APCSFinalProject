@@ -21,6 +21,9 @@ public class TableFormatter {
     Pattern tdPatS = Pattern.compile("\\<td.*?\\>", Pattern.CASE_INSENSITIVE);
     Pattern tdPatE = Pattern.compile("\\</td\\>", Pattern.CASE_INSENSITIVE);
 
+    Matcher trSFinder, trEFinder;
+    Matcher thSFinder, thEFinder;
+    Matcher tdSFinder, tdEFinder;
 
     int thisRowWidth;
 
@@ -30,12 +33,12 @@ public class TableFormatter {
         original = s;
         result = s;
 
-	Matcher trSFinder = trPatS.matcher(s);
-	Matcher trEFinder = trPatE.matcher(s);
-	Matcher thSFinder = thPatS.matcher(s);
-	Matcher thEFinder = thPatE.matcher(s);
-	Matcher tdSFinder = tdPatS.matcher(s);
-	Matcher tdEFinder = tdPatE.matcher(s);
+	trSFinder = trPatS.matcher(s);
+	trEFinder = trPatE.matcher(s);
+	thSFinder = thPatS.matcher(s);
+	thEFinder = thPatE.matcher(s);
+	tdSFinder = tdPatS.matcher(s);
+	tdEFinder = tdPatE.matcher(s);
     }
     
     // Methods

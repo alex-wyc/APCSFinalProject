@@ -4,7 +4,7 @@ import java.util.regex.*;
 import java.util.ArrayList;
 
 public class URLtoSource {
-
+	
 	// Variables
 	int start, end;
 	String source = "";
@@ -12,7 +12,7 @@ public class URLtoSource {
 	String body = "";
 	String title = "";
 	ArrayList<String> paragraphs = new ArrayList<String>();
-
+	
 	// Regex stuff for finding head and body and stuff
 	Pattern headPatS = Pattern.compile("\\<head.*?\\>", Pattern.CASE_INSENSITIVE);
 	Pattern headPatE = Pattern.compile("\\</head\\>", Pattern.CASE_INSENSITIVE);
@@ -22,16 +22,16 @@ public class URLtoSource {
 	Pattern titlePatE = Pattern.compile("\\</title\\>", Pattern.CASE_INSENSITIVE);
 	Pattern paragraphPatS = Pattern.compile("\\<p.*?\\>|\\<h[1-9].*?\\>|\\<ul.*?\\>|\\<ol.*?\\>|\\<table.*?\\>", Pattern.CASE_INSENSITIVE);
 	Pattern paragraphPatE = Pattern.compile("\\</p\\>|\\</h[1-9]\\>|\\</ul\\>|\\</ol\\>|\\</table\\>", Pattern.CASE_INSENSITIVE);
-
-    // Regex patterns for finding <table> stuff
-    // Placed here instead of line 140 just because
-    Pattern thPatS = Pattern.compile("\\<th.*?\\>", Pattern.CASE_INSENSITIVE);
-    Pattern thPatE = Pattern.compile("\\</th\\>", Pattern.CASE_INSENSITIVE);
-    Pattern trPatS = Pattern.compile("\\<tr.*?\\>", Pattern.CASE_INSENSITIVE);
-    Pattern trPatE = Pattern.compile("\\</tr\\>", Pattern.CASE_INSENSITIVE);
-    Pattern tdPatS = Pattern.compile("\\<td.*?\\>", Pattern.CASE_INSENSITIVE);
-    Pattern tdPatE = Pattern.compile("\\</td\\>", Pattern.CASE_INSENSITIVE);
-
+	
+	// Regex patterns for finding <table> stuff
+	// Placed here instead of line 140 just because
+	Pattern thPatS = Pattern.compile("\\<th.*?\\>", Pattern.CASE_INSENSITIVE);
+	Pattern thPatE = Pattern.compile("\\</th\\>", Pattern.CASE_INSENSITIVE);
+	Pattern trPatS = Pattern.compile("\\<tr.*?\\>", Pattern.CASE_INSENSITIVE);
+	Pattern trPatE = Pattern.compile("\\</tr\\>", Pattern.CASE_INSENSITIVE);
+	Pattern tdPatS = Pattern.compile("\\<td.*?\\>", Pattern.CASE_INSENSITIVE);
+	Pattern tdPatE = Pattern.compile("\\</td\\>", Pattern.CASE_INSENSITIVE);
+	
 	// Constructors
 	public URLtoSource(String site) throws Exception {
 
@@ -137,18 +137,19 @@ public class URLtoSource {
 				ListFormatter pf = new ListFormatter(currentParagraph, true);
 			
 			}
-                        
-                        if (pstarter.substring(0,6).equals("<table")) {
-                                TableFormatter pf = new TableFormatter(currentParagraph);
-				pf.doStuff();
-                        }
-            }
-                        
-			currentParagraph = pf.getResult();
-
-			paragraphs.add(currentParagraph);
 			
-			pFind = paragraphSFinder.find() && paragraphEFinder.find();
+			if (pstarter.substring(0,6).equals("<table")) {
+				TableFormatter pf = new TableFormatter(currentParagraph);
+				pf.doStuff();
+			}
+		}
+		
+		currentParagraph = pf.getResult();
+
+		paragraphs.add(currentParagraph);
+		
+		pFind = paragraphSFinder.find() && paragraphEFinder.find();
+		
 		}
 	}
 
