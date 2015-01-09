@@ -34,91 +34,91 @@ public class URLtoSource {
 	
 	// Constructors
 	public URLtoSource(String site) throws Exception {
-
+	
 		try {
-
+			
 			URL siteURL = new URL(site);
-
+			
 			BufferedReader br = new BufferedReader(new InputStreamReader(siteURL.openStream()));
-
+			
 			String inputLine;
-
+			
 			while ((inputLine = br.readLine()) != null) {
 				source = source + inputLine.replaceAll("\t", "");
 			}
-
+			
 			br.close();
 		} catch (Exception e) {
 			System.out.println("Corrupt website or site does not exist, program will now exit.");
 			System.exit(1);
 		}
-
+		
 		//System.out.println(source);
-
+		
 		Matcher headSFinder = headPatS.matcher(source);
-
+		
 		if (headSFinder.find()) {
 			start = headSFinder.end();
 		}
-
+		
 		Matcher headEFinder = headPatE.matcher(source);
-
+		
 		if (headEFinder.find()) {
 			end = headEFinder.start();
 		}
-
+		
 		head = source.substring(start, end);
-
+		
 		start = end = 0;
-
+		
 		Matcher bodySFinder = bodyPatS.matcher(source);
 		
 		if (bodySFinder.find()) {
 			start = bodySFinder.end();
 		}
-
+		
 		Matcher bodyEFinder = bodyPatE.matcher(source);
-
+		
 		if (bodyEFinder.find()) {
 			end = bodyEFinder.start();
 		}
-
+		
 		body = source.substring(start,end);
-
+		
 		start = end = 0;
-
+		
 		Matcher titleSFinder = titlePatS.matcher(head);
-
+		
 		if (titleSFinder.find()) {
 			start = titleSFinder.end();
 		}
-
+		
 		Matcher titleEFinder = titlePatE.matcher(head);
-
+		
 		if (titleEFinder.find()) {
 			end = titleEFinder.start();
 		}
-
+		
 		title = head.substring(start,end);
-
+		
 		Format titlef = new Format(title);
 		titlef.setBold();
 		titlef.setUnderline();
 		
 		title = titlef.getResult();
-
+		
 		Matcher paragraphSFinder = paragraphPatS.matcher(body);
 		Matcher paragraphEFinder = paragraphPatE.matcher(body);
-
+		
 		boolean pFind = paragraphSFinder.find() && paragraphEFinder.find();
 		String currentParagraph = null;
-
+		
 		while (pFind) {
-
+			
 			currentParagraph = body.substring(paragraphSFinder.end(), paragraphEFinder.start());
-
+			
 			pstarter = paragraphSFinder.group();
-
+			
 			if (pstarter.substring(0,2).equals("<h")) {
 				Format pf = new Format(currentParagraph);
 				if (pstarter.charAt(2) < '5') {
@@ -128,11 +128,11 @@ public class URLtoSource {
 					pf.setUnderline();
 				}
 			}
-
+			
 			if (pstarter.substring(0,3).equals("<ul")) {
 				ListFormatter pf = new ListFormatter(currentParagraph, false);
 			}
-
+			
 			else if (pstarter.substring(0,3).equals("<ol")) {
 				ListFormatter pf = new ListFormatter(currentParagraph, true);
 			
@@ -145,36 +145,36 @@ public class URLtoSource {
 		}
 		
 		currentParagraph = pf.getResult();
-
+		
 		paragraphs.add(currentParagraph);
 		
 		pFind = paragraphSFinder.find() && paragraphEFinder.find();
 		
 		}
 	}
-
+	
 	// Methods
 	public String getSource() {
 		return source;
 	}
-
+	
 	public String getHead() {
 		return head;
 	
 	}
-
+	
 	public String getBody() {
 		return body;
 	}
-
+	
 	public String getTitle() {
 		return title;
 	}
-
+	
 	public String[] getParagraphs() {
 		String[] temp = new String[paragraphs.size()];
 		paragraphs.toArray(temp);
-
+		
 		return temp;
 	}
 }
