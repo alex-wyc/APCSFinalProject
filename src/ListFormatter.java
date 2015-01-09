@@ -12,12 +12,23 @@ public class ListFormatter {
 
 	// Constructors
 
-	public ListFormatter(String html) {
-
+	public ListFormatter(String html, boolean ordered) {
+		if (ordered) {
+			orderedHandeler(html);
+		}
+		else {
+			unOrderedHandeler(html);
+		}
 	}
 
 	public String getResult() {
+		String out = "";
 
+		for (int i = 0 ; i < listEls.size() ; i++) {
+			out = out + listEls.get(i) + "\n";
+		}
+		
+		return out;
 	}
 
 	private ArrayList<String> orderedHandeler(String html, int index) {
@@ -71,6 +82,8 @@ public class ListFormatter {
 				counter++;
 			}
 		}
+
+		return out;
 	}
 
 	private ArrayList<String> unOrderedHandeler(String html, int index) {
@@ -123,5 +136,7 @@ public class ListFormatter {
 				counter++;
 			}
 		}
+
+		return out;
 	}
 }
