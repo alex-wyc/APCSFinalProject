@@ -142,7 +142,6 @@ public class URLtoSource {
                                 TableFormatter pf = new TableFormatter(currentParagraph);
 				pf.doStuff();
                         }
-            }
                         
 			currentParagraph = pf.getResult();
 
