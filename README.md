@@ -1,7 +1,7 @@
 APCSFinalProject
 ================
 
-APCS Final Project - Athenian <sub><sup>Rabbit</sub></sup> <sub><sup><sub><sup>Browser</sub></sup></sub></sup>
+APCS Final Project - ####Athenian <sub><sup>Rabbit</sub></sup> <sub><sup><sub><sup>Browser</sub></sup></sub></sup>
 
 File hierarchy:
 * A class that connects to specific server
