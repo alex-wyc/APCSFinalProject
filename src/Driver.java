@@ -22,13 +22,17 @@ public class Driver {
 			System.exit(1);
 		}
 
-		clearScreen();
+		//clearScreen();
+
+		//System.out.println(site.getSource());
 
 		System.out.println(site.getTitle());
 
 		System.out.println();
 		
 		String[] paragraphs = site.getParagraphs();
+
+		System.out.println(paragraphs.length);
 
 		for (String p : paragraphs) {
 			System.out.println(p);

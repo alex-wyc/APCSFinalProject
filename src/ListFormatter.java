@@ -1,6 +1,7 @@
 import java.util.*;
+import java.util.regex.*;
 
-public class ListFormatter {
+public class ListFormatter{
 	
 	// Instance variables
 
@@ -14,10 +15,10 @@ public class ListFormatter {
 
 	public ListFormatter(String html, boolean ordered) {
 		if (ordered) {
-			orderedHandeler(html);
+			orderedHandeler(html, 0);
 		}
 		else {
-			unOrderedHandeler(html);
+			unOrderedHandeler(html, 0);
 		}
 	}
 
@@ -78,7 +79,7 @@ public class ListFormatter {
 			else {
 				// If this is a normal string
 				String content = html.substring(listElPatFinderS.end(), listElPatFinderE.start());
-				out.add(pramble + counter + ". " + content)
+				out.add(preamble + counter + ". " + content);
 				counter++;
 			}
 		}
@@ -132,8 +133,7 @@ public class ListFormatter {
 			else {
 				// If this is a normal string
 				String content = html.substring(listElPatFinderS.end(), listElPatFinderE.start());
-				out.add(pramble + counter + ". " + content)
-				counter++;
+				out.add(preamble + ". " + content);
 			}
 		}
 

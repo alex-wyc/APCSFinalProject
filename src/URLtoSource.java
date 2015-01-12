@@ -111,13 +111,12 @@ public class URLtoSource {
 		Matcher paragraphEFinder = paragraphPatE.matcher(body);
 
 		boolean pFind = paragraphSFinder.find() && paragraphEFinder.find();
-		String currentParagraph = null;
-
+		String currentParagraph = "";
+		System.out.println(pFind);
 		while (pFind) {
-
 			currentParagraph = body.substring(paragraphSFinder.end(), paragraphEFinder.start());
 
-			pstarter = paragraphSFinder.group();
+			String pstarter = paragraphSFinder.group();
 
 			if (pstarter.substring(0,2).equals("<h")) {
 				Format pf = new Format(currentParagraph);
@@ -127,23 +126,28 @@ public class URLtoSource {
 				else {
 					pf.setUnderline();
 				}
+
+				currentParagraph = pf.getResult();
 			}
 
-			if (pstarter.substring(0,3).equals("<ul")) {
+			else if (pstarter.substring(0,3).equals("<ul")) {
 				ListFormatter pf = new ListFormatter(currentParagraph, false);
+
+				currentParagraph = pf.getResult();
 			}
 
 			else if (pstarter.substring(0,3).equals("<ol")) {
 				ListFormatter pf = new ListFormatter(currentParagraph, true);
-			
+
+				currentParagraph = pf.getResult();
 			}
                         
-                        if (pstarter.substring(0,6).equals("<table")) {
-                                TableFormatter pf = new TableFormatter(currentParagraph);
+            else if (pstarter.substring(0,6).equals("<table")) {
+            	TableFormatter pf = new TableFormatter(currentParagraph);
 				pf.doStuff();
-                        }
-                        
-			currentParagraph = pf.getResult();
+
+				currentParagraph = pf.getResult();
+            }
 
 			paragraphs.add(currentParagraph);
 			

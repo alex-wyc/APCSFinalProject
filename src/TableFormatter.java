@@ -1,7 +1,7 @@
 import java.util.regex.*;
 import java.util.ArrayList;
 
-public class TableFormatter {
+public class TableFormatter{
     // Take in currentParagraph from URLtoSource.java,
     // Breaks stuff into 2-D ArrayList structure,
     // Then spits it out as one string. I guess.

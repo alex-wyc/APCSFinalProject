@@ -1,4 +1,4 @@
-public class Format {
+public class Format{
 	
 	// Instance variables
 
