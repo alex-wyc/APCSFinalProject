@@ -1,7 +1,7 @@
 APCSFinalProject
 ================
 
-APCS Final Project
+APCS Final Project - Athenian Rabbit Browser
 
 File hierarchy:
 * A class that connects to specific server
