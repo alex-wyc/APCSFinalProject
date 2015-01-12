@@ -55,6 +55,4 @@ public class TableFormatter{
 
     void doStuff() {
 	this.fillLists();
-	
-    }
-}
+
