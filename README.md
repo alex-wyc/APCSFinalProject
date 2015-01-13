@@ -25,6 +25,8 @@ ChangeLog
 
 2015-01-07: Dalton - Last time I try to fix Yicheng's spelling, made some tables stuff
 
+2015-01-12: Yicheng - Finally fixed infinite while loop/recursion problem in list formatter, something is still broken nonetheless.
+
 TO-DO LIST
 ===========
 * A list-handling class
