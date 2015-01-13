@@ -34,7 +34,7 @@ public class URLtoSource {
 	
 	// Constructors
 	public URLtoSource(String site) throws Exception {
-	
+		
 		try {
 			
 			URL siteURL = new URL(site);
@@ -111,7 +111,7 @@ public class URLtoSource {
 		Matcher paragraphEFinder = paragraphPatE.matcher(body);
 		
 		boolean pFind = paragraphSFinder.find() && paragraphEFinder.find();
-
+		
 		String currentParagraph = null;
 		
 		while (pFind) {
@@ -128,27 +128,27 @@ public class URLtoSource {
 				else {
 					pf.setUnderline();
 				}
-
+				
 				currentParagraph = pf.getResult();
 			}
-
+			
 			else if (pstarter.substring(0,3).equals("<ul")) {
-
+				
 				ListFormatter pf = new ListFormatter(currentParagraph, false);
-
+				
 				currentParagraph = pf.getResult();
 			}
 			
 			else if (pstarter.substring(0,3).equals("<ol")) {
 				ListFormatter pf = new ListFormatter(currentParagraph, true);
-
+				
 				currentParagraph = pf.getResult();
 			}
 /*
-            else if (pstarter.substring(0,6).equals("<table")) {
-            	TableFormatter pf = new TableFormatter(currentParagraph);
+			else if (pstarter.substring(0,6).equals("<table")) {
+				TableFormatter pf = new TableFormatter(currentParagraph);
 				pf.doStuff();
-
+				
 				currentParagraph = pf.getResult();
             }
 */

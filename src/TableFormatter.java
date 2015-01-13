@@ -12,7 +12,7 @@ public class TableFormatter {
 	String original;
 	String result;
 	
-	ArrayList<ArrayList<String>> grid = new ArrayList<ArrayList<String>>();
+	ArrayList<ArrayList<String>> grid;
 	
 	Pattern trPatS = Pattern.compile("\\<tr.*?\\>", Pattern.CASE_INSENSITIVE);
 	Pattern trPatE = Pattern.compile("\\</tr\\>", Pattern.CASE_INSENSITIVE);
@@ -42,6 +42,9 @@ public class TableFormatter {
 		thEFinder = thPatE.matcher(s);
 		tdSFinder = tdPatS.matcher(s);
 		tdEFinder = tdPatE.matcher(s);
+		
+		grid = new ArrayList<ArrayList<String>>();
+		
 	}
 	
 	// Methods
@@ -51,7 +54,9 @@ public class TableFormatter {
 	}
 	
 	void fillLists() {
-		while()
+		while(trSFinder.find() && trEFinder.find()) {
+			System.out.println(trSFinder.group());
+		}
 	}
 	
 	int tableWidth() {
@@ -60,7 +65,7 @@ public class TableFormatter {
 	}
 	
 	void doStuff() {
-	this.fillLists();
+		this.fillLists();
 	}
 }
 
