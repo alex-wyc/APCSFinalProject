@@ -117,6 +117,7 @@ public class URLtoSource {
 		while (pFind) {
 			
 			currentParagraph = body.substring(paragraphSFinder.end(), paragraphEFinder.start());
+			System.out.println(currentParagraph);
 			
 			String pstarter = paragraphSFinder.group();
 			

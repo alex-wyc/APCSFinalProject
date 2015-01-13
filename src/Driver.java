@@ -32,8 +32,6 @@ public class Driver {
 		
 		String[] paragraphs = site.getParagraphs();
 
-		System.out.println(paragraphs.length);
-
 		for (String p : paragraphs) {
 			System.out.println(p);
 			System.out.println();
