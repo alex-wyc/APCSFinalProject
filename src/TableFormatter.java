@@ -37,7 +37,9 @@ public class TableFormatter {
 		result = s;
 		
 		trSFinder = trPatS.matcher(s);
+		trSFinder.matches();
 		trEFinder = trPatE.matcher(s);
+		trEFinder.matches();
 		thSFinder = thPatS.matcher(s);
 		thEFinder = thPatE.matcher(s);
 		tdSFinder = tdPatS.matcher(s);
@@ -62,7 +64,9 @@ public class TableFormatter {
 			grid.add(new ArrayList<String>());
 			String tableRow = STRING.substring(trSFinder.end(), trEFinder.start());
 			tdSFinder = tdPatS.matcher(tableRow);
+			tdSFinder.matches();
 			tdEFinder = tdPatE.matcher(tableRow);
+			tdEFinder.matches();
 			while(tdSFinder.find() && tdEFinder.find()) {
 			    String element = STRING.substring(tdSFinder.end(), tdEFinder.start());
 			    grid.get(grid.size()-1).add(element); // ugh, there has to be a better way
