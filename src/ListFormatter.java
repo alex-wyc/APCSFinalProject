@@ -112,7 +112,7 @@ public class ListFormatter{
 
 			String id = listElPatFinderS.group();
 
-			if (id.substring(0,2).equals("<ol")) {
+			if (id.substring(0,3).equals("<ol")) {
 				int sublistBegin = listElPatFinderS.end();
 				
 				while (!(listElPatFinderE.group().substring(0,4).equals("</ol"))) {
@@ -127,12 +127,13 @@ public class ListFormatter{
 				out.addAll(orderedHandeler(html.substring(sublistBegin, sublistEnd), index + 1));
 			}
 
-			else if (id.substring(0,2).equals("<ul")) {
+			else if (id.substring(0,3).equals("<ul")) {
 				int sublistBegin = listElPatFinderS.end();
 
 				while (!(listElPatFinderE.group().substring(0,4).equals("</ul"))) {
 					listElPatFinderS.find();
 					listElPatFinderE.find();
+
 					// We skip over the content of the sublist
 				}
 
@@ -148,6 +149,7 @@ public class ListFormatter{
 			}
 
 			elFind = listElPatFinderS.find() && listElPatFinderE.find();
+
 		}
 
 		return out;

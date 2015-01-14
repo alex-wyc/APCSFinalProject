@@ -120,27 +120,26 @@ public class URLtoSource {
 			String pstarter = paragraphSFinder.group();
 			int startCounter = 1;
 			int endCounter = 0;
+
+			if (!(paragraphEFinder.group().substring(2,4).equals(pstarter.substring(1,3)))) {
 			
-			while (startCounter != endCounter) {
-				System.out.println(startCounter + ", " + endCounter);
-				System.out.println(paragraphSFinder.group());
-				System.out.println(paragraphEFinder.group());
+				while (startCounter != endCounter) {
+					paragraphSFinder.find();
+					paragraphEFinder.find();
 
-				if (paragraphSFinder.group().substring(1,3).equals(pstarter.substring(1,3))) {
-					startCounter++;
-				}
+					if (paragraphSFinder.group().substring(1,3).equals(pstarter.substring(1,3))) {
+						startCounter++;
+					}
 
-				if (paragraphEFinder.group().substring(2,4).equals(pstarter.charAt(1))) {
-					endCounter++;
+					if (paragraphEFinder.group().substring(2,4).equals(pstarter.substring(1,3))) {
+						endCounter++;
+					}
 				}
-				paragraphEFinder.find();
-				paragraphSFinder.find();
 			}
 
 			int end = paragraphEFinder.start();
 
 			currentParagraph = body.substring(initial, end);
-			System.out.println(currentParagraph);
 			
 			if (pstarter.substring(0,2).equals("<h")) {
 				Format pf = new Format(currentParagraph);
