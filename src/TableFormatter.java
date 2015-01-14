@@ -9,7 +9,7 @@ public class TableFormatter {
 	
 	// Instance variables
 	
-	String original;
+	String STRING;
 	String result;
 	
 	ArrayList<ArrayList<String>> grid;
@@ -33,7 +33,7 @@ public class TableFormatter {
 	// Constructor
 	
 	public TableFormatter(String s) {
-		original = s;
+		STRING = s;
 		result = s;
 		
 		trSFinder = trPatS.matcher(s);
@@ -43,8 +43,12 @@ public class TableFormatter {
 		tdSFinder = tdPatS.matcher(s);
 		tdEFinder = tdPatE.matcher(s);
 		
-		grid = new ArrayList<ArrayList<String>>();
-		
+		grid = new ArrayList<ArrayList<String>>(0);
+		/*
+		for (ArrayList<String> foo : grid) {
+		    foo = new ArrayList<String>(1);
+		}
+		*/
 	}
 	
 	// Methods
@@ -55,10 +59,26 @@ public class TableFormatter {
 	
 	void fillLists() {
 		while(trSFinder.find() && trEFinder.find()) {
-			System.out.println(trSFinder.group());
+			grid.add(new ArrayList<String>());
+			String tableRow = STRING.substring(trSFinder.end(), trEFinder.start());
+			tdSFinder = tdPatS.matcher(tableRow);
+			tdEFinder = tdPatE.matcher(tableRow);
+			while(tdSFinder.find() && tdEFinder.find()) {
+			    String element = STRING.substring(tdSFinder.end(), tdEFinder.start());
+			    grid.get(grid.size()-1).add(element); // ugh, there has to be a better way
+			}
 		}
 	}
 	
+	void blam() {
+	    for(ArrayList<String> foo : grid) {
+		for(String fooPrime : foo) {
+		    result = result + fooPrime + " ";
+		}
+		result = result + "\n";
+	    }
+	}
+
 	int tableWidth() {
 		int w = 0;
 		return w;
@@ -66,6 +86,7 @@ public class TableFormatter {
 	
 	void doStuff() {
 		this.fillLists();
+		this.blam();
 	}
 }
 

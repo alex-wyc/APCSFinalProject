@@ -165,14 +165,14 @@ public class URLtoSource {
 				
 				currentParagraph = pf.getResult();
 			}
-/*
+
 			else if (pstarter.substring(0,6).equals("<table")) {
 				TableFormatter pf = new TableFormatter(currentParagraph);
 				pf.doStuff();
 				
 				currentParagraph = pf.getResult();
             }
-*/
+
 			paragraphs.add(currentParagraph);
 			pFind = paragraphSFinder.find() && paragraphEFinder.find();
 		
