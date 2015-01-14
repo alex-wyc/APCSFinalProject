@@ -43,9 +43,11 @@ ChangeLog
 
 2015-01-12: Yicheng - Finally fixed infinite while loop/recursion problem in list formatter, something is still broken nonetheless.
 
+2015-01-14: Yicheng - List formatter completely working, can handel nested lists
+
 TO-DO LIST
 ===========
-* A list-handling class
+* A list-handling class - check
 * A table-handling class
 * A paragraph formatter
 * A hyperlink-handling class
