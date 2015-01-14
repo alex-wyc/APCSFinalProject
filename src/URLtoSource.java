@@ -116,10 +116,19 @@ public class URLtoSource {
 		
 		while (pFind) {
 			
-			currentParagraph = body.substring(paragraphSFinder.end(), paragraphEFinder.start());
 			System.out.println(currentParagraph);
+			int initial = paragraphSFinder.end();
 			
 			String pstarter = paragraphSFinder.group();
+
+			while (!(paragraphEFinder.group().charAt(2).equals(pstarter.charAt(1)))) {
+				paragraphSFinder.find();
+				paragraphEFinder.find();
+			}
+
+			int end = paragraphEFinder.start();
+
+			currentParagraph = body.substring(initial, end);
 			
 			if (pstarter.substring(0,2).equals("<h")) {
 				Format pf = new Format(currentParagraph);
