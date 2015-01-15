@@ -47,7 +47,7 @@ ChangeLog
 
 TO-DO LIST
 ===========
-* A list-handling class - check
-* A table-handling class
-* A paragraph formatter
-* A hyperlink-handling class
+- [x] A list-handling class (Yicheng)
+- [] A table-handling class
+- [] A paragraph formatter
+- [] A hyperlink-handling class
