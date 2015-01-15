@@ -34,18 +34,15 @@ public class TableFormatter {
 	
 	public TableFormatter(String s) {
 		STRING = s;
-		result = s;
+		result = "";
 		
 		trSFinder = trPatS.matcher(s);
-		trSFinder.matches();
 		trEFinder = trPatE.matcher(s);
-		trEFinder.matches();
 		thSFinder = thPatS.matcher(s);
 		thEFinder = thPatE.matcher(s);
-		tdSFinder = tdPatS.matcher(s);
-		tdEFinder = tdPatE.matcher(s);
-		
-		grid = new ArrayList<ArrayList<String>>(0);
+
+		grid = new ArrayList<ArrayList<String>>();
+		//grid.add(new ArrayList<String>());
 		/*
 		for (ArrayList<String> foo : grid) {
 		    foo = new ArrayList<String>(1);
@@ -60,6 +57,8 @@ public class TableFormatter {
 	}
 	
 	void fillLists() {
+		trSFinder.matches();
+		trEFinder.matches();
 		while(trSFinder.find() && trEFinder.find()) {
 			grid.add(new ArrayList<String>());
 			String tableRow = STRING.substring(trSFinder.end(), trEFinder.start());
@@ -68,7 +67,7 @@ public class TableFormatter {
 			tdEFinder = tdPatE.matcher(tableRow);
 			tdEFinder.matches();
 			while(tdSFinder.find() && tdEFinder.find()) {
-			    String element = STRING.substring(tdSFinder.end(), tdEFinder.start());
+			    String element = STRING.substring(tdSFinder.end(), tdEFinder.start())+"*";
 			    grid.get(grid.size()-1).add(element); // ugh, there has to be a better way
 			}
 		}
@@ -77,9 +76,9 @@ public class TableFormatter {
 	void blam() {
 	    for(ArrayList<String> foo : grid) {
 		for(String fooPrime : foo) {
-		    result = result + fooPrime + " ";
+		    result += fooPrime;
 		}
-		result = result + "\n";
+		result += "\n";
 	    }
 	}
 
@@ -89,6 +88,7 @@ public class TableFormatter {
 	}
 	
 	void doStuff() {
+	    System.out.println("WTFFF");
 		this.fillLists();
 		this.blam();
 	}
