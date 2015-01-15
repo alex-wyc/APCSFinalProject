@@ -44,7 +44,7 @@ public class URLtoSource {
 			String inputLine;
 			
 			while ((inputLine = br.readLine()) != null) {
-				source = source + inputLine.replaceAll("\t", "");
+				source = source + " " + inputLine.replaceAll("\t", "");
 			}
 			
 			br.close();
@@ -140,8 +140,13 @@ public class URLtoSource {
 			int end = paragraphEFinder.start();
 
 			currentParagraph = body.substring(initial, end);
+
+			if (pstarter.substring(0,2).equals("<p")) {
+				ParagraphFormatter pf = new ParagraphFormatter(currentParagraph);
+				currentParagraph = pf.getResult();
+			}
 			
-			if (pstarter.substring(0,2).equals("<h")) {
+			else if (pstarter.substring(0,2).equals("<h")) {
 				Format pf = new Format(currentParagraph);
 				if (pstarter.charAt(2) < '5') {
 					pf.setBold();
@@ -166,7 +171,8 @@ public class URLtoSource {
 				currentParagraph = pf.getResult();
 			}
 
-			else if (pstarter.substring(0,6).equals("<table")) {
+			// table is way too long, causes index-out-of-bound
+			else if (pstarter.substring(0,3).equals("<ta")) {
 				TableFormatter pf = new TableFormatter(currentParagraph);
 				pf.doStuff();
 				
