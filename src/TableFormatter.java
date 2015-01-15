@@ -62,7 +62,7 @@ public class TableFormatter {
 	void fillLists() {
 		while(trSFinder.find() && trEFinder.find()) {
 			grid.add(new ArrayList<String>());
-			String tableRow = STRING.substring(trSFinder.end(), trEFinder.start());
+			String tableRow = STRING.substring(trSFinder.end()+4, trEFinder.start()-5);
 			tdSFinder = tdPatS.matcher(tableRow);
 			tdSFinder.matches();
 			tdEFinder = tdPatE.matcher(tableRow);
@@ -77,7 +77,7 @@ public class TableFormatter {
 	void blam() {
 	    for(ArrayList<String> foo : grid) {
 		for(String fooPrime : foo) {
-		    result = result + fooPrime + " ";
+		    result = result + fooPrime + "WEOFIJOIJ ";
 		}
 		result = result + "\n";
 	    }
