@@ -15,18 +15,16 @@ public class ParagraphFormatter {
 	Pattern deletedElPatS = Pattern.compile("\\<del\\>", Pattern.CASE_INSENSITIVE);
 	Pattern deletedElPatE = Pattern.compile("\\</del\\>", Pattern.CASE_INSENSITIVE);
 
-	Pattern insertedElPatS = Pattern.compile("\\<ins\\>", Pattern.CASE_INSENSITIVE);
-	Pattern insertedElPatE = Pattern.compile("\\</ins\\>", Pattern.CASE_INSENSITIVE);
+	Pattern insertedElPatS = Pattern.compile("\\<ins\\>|\\<a.*?\\>", Pattern.CASE_INSENSITIVE);
+	Pattern insertedElPatE = Pattern.compile("\\</ins\\>|\\</a\\>", Pattern.CASE_INSENSITIVE);
 
 	// Constructor! (One function that solves everything)
 	public ParagraphFormatter(String html) {
-		System.out.println(html);
 		result = setAllBold(html);
-		System.out.println(result);
 		result = setAllItalic(result); // Apparently not achievable in gnome terminal, someone try this with windows pl0x
 		result = setAllUnderline(result);
 		result = setAllStrikethrough(result);
-		// Now we remove everything else enclosed in angled brackets!
+
 		result = removeAllElse(result);
 	}
 
@@ -165,4 +163,5 @@ public class ParagraphFormatter {
 
 		return output;
 	}
+
 }

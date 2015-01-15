@@ -46,6 +46,8 @@ public class URLtoSource {
 			while ((inputLine = br.readLine()) != null) {
 				source = source + " " + inputLine.replaceAll("\t", "");
 			}
+
+			source = source.replace("  ", " ");
 			
 			br.close();
 		} catch (Exception e) {
@@ -155,7 +157,7 @@ public class URLtoSource {
 					pf.setUnderline();
 				}
 				
-				currentParagraph = pf.getResult();
+				currentParagraph = removeAllElse(pf.getResult());
 			}
 			
 			else if (pstarter.substring(0,3).equals("<ul")) {
@@ -208,5 +210,14 @@ public class URLtoSource {
 		paragraphs.toArray(temp);
 		
 		return temp;
+	}
+
+	private String removeAllElse(String html) {
+
+		while (html.contains("<") && html.contains(">")) {
+			html = html.substring(0, html.indexOf("<")) + html.substring(html.indexOf(">") + 1);
+		}
+
+		return html;
 	}
 }

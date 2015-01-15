@@ -14,8 +14,8 @@ public class Driver {
 		String URLStr = sc.nextLine();
 
 		try {
-			site = new URLtoSource(URLStr);
 			System.out.println("Loading...");
+			site = new URLtoSource(URLStr);
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("Formatting not yet implemented, program will now exit");

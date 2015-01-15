@@ -29,7 +29,7 @@ public class ListFormatter{
 			out = out + listEls.get(i) + "\n";
 		}
 		
-		return out;
+		return removeAllElse(out);
 	}
 
 	private ArrayList<String> orderedHandeler(String html, int index) {
@@ -99,7 +99,7 @@ public class ListFormatter{
 		for (int i = 0 ; i < index ; i++) {
 			preamble = preamble + "\t";
 		}
-		preamble = preamble + ">";
+		preamble = preamble + "\u2022";
 
 		ArrayList<String> out = new ArrayList<String>();
 
@@ -145,13 +145,24 @@ public class ListFormatter{
 			else {
 				// If this is a normal string
 				String content = html.substring(listElPatFinderS.end(), listElPatFinderE.start());
-				out.add(preamble + ". " + content);
+				out.add(preamble + " " + content);
 			}
 
 			elFind = listElPatFinderS.find() && listElPatFinderE.find();
 
+			System.out.println(out.toString());
+
 		}
 
 		return out;
+	}
+
+	private String removeAllElse(String html) {
+
+		while (html.contains("<") && html.contains(">")) {
+			html = html.substring(0, html.indexOf("<")) + html.substring(html.indexOf(">") + 1);
+		}
+
+		return html;
 	}
 }
