@@ -171,7 +171,7 @@ public class URLtoSource {
 				currentParagraph = pf.getResult();
 			}
 
-			// table is way too long, causes index-out-of-bound
+			// "<table" is way too long, causes index-out-of-bound
 			else if (pstarter.substring(0,3).equals("<ta")) {
 				TableFormatter pf = new TableFormatter(currentParagraph);
 				pf.doStuff();
