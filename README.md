@@ -45,9 +45,11 @@ ChangeLog
 
 2015-01-14: Yicheng - List formatter completely working, can handel nested lists
 
+2015-01-14: Yicheng - Paragraph formatter done!!!
+
 TO-DO LIST
 ===========
 - [x] A list-handling class (Yicheng)
 - [ ] A table-handling class
-- [ ] A paragraph formatter
+- [x] A paragraph formatter (Yicheng)
 - [ ] A hyperlink-handling class
