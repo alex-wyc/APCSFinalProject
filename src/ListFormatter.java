@@ -14,6 +14,8 @@ public class ListFormatter{
 	// Constructors
 
 	public ListFormatter(String html, boolean ordered) {
+		System.out.println(html);
+		System.out.println();
 		if (ordered) {
 			listEls = orderedHandeler(html, 0);
 		}
@@ -149,8 +151,6 @@ public class ListFormatter{
 			}
 
 			elFind = listElPatFinderS.find() && listElPatFinderE.find();
-
-			System.out.println(out.toString());
 
 		}
 

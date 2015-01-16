@@ -122,21 +122,25 @@ public class URLtoSource {
 			String pstarter = paragraphSFinder.group();
 			int startCounter = 1;
 			int endCounter = 0;
-
-			if (!(paragraphEFinder.group().substring(2,4).equals(pstarter.substring(1,3)))) {
 			
-				while (startCounter != endCounter) {
-					paragraphSFinder.find();
-					paragraphEFinder.find();
+			// Nested html = pestilance urafjkfhkajhf
+			// Problem: cannot distinguish between consecutive and nested statements!!??!#fajksdgf
 
-					if (paragraphSFinder.group().substring(1,3).equals(pstarter.substring(1,3))) {
+			while (startCounter != endCounter) {
+				System.out.println(startCounter + ", " + endCounter);
+				System.out.println(pstarter + ", " + paragraphEFinder.group());
+
+				paragraphSFinder.find();
+
+				if (paragraphSFinder.group().substring(1,3).equals(pstarter.substring(1,3))) {
 						startCounter++;
-					}
-
-					if (paragraphEFinder.group().substring(2,4).equals(pstarter.substring(1,3))) {
-						endCounter++;
-					}
 				}
+
+				if (paragraphEFinder.group().substring(2,4).equals(pstarter.substring(1,3))) {
+					endCounter++;
+				}
+
+				paragraphEFinder.find();
 			}
 
 			int end = paragraphEFinder.start();
@@ -172,7 +176,7 @@ public class URLtoSource {
 				
 				currentParagraph = pf.getResult();
 			}
-
+/*
 			// "<table" is way too long, causes index-out-of-bound
 			else if (pstarter.substring(0,3).equals("<ta")) {
 				TableFormatter pf = new TableFormatter(currentParagraph);
@@ -180,7 +184,7 @@ public class URLtoSource {
 				
 				currentParagraph = pf.getResult();
             }
-
+*/
 			paragraphs.add(currentParagraph);
 			pFind = paragraphSFinder.find() && paragraphEFinder.find();
 		

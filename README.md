@@ -47,6 +47,8 @@ ChangeLog
 
 2015-01-14: Yicheng - Paragraph formatter done!!!
 
+2015-01-14: Yicheng - Last problem (nested html...) half-working. Discovered <a href="http://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags/1732454#1732454">this...</a>
+
 TO-DO LIST
 ===========
 - [x] A list-handling class (Yicheng)
