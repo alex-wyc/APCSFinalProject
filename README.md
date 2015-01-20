@@ -11,7 +11,7 @@ File hierarchy:
 
 Folder Descriptions:
 --------------------
-* <code>src</code>: the folder that holds the sorce code for the project, run either by <code>./recompile</code> or <code>javac Driver.java</code> followed by <code>java Driver</code>
+* <code>src</code>: the folder that holds the source code for the project, run either by <code>./recompile</code> or <code>javac Driver.java</code> followed by <code>java Driver</code>
 * <code>testCases</code>: the folder that holds websites that actually work, slightly edited --> first line points to the actual url of the website
 
 Random Joke that is SOMEWHAT Appropriate
@@ -33,23 +33,23 @@ Top 10 things likely to be overheard from a Klingon Programmer
 ChangeLog
 =========
 
-2014-12-22: Yicheng - Basic formatting class added, can read color, old, italic, underline and strikethrough
+2014-12-22: Yicheng - Basic formatting class added, can read color, bold, italic, underline and strikethrough
 
-2014-12-26: Yicheng - URL to sourcecode added, returns entire source, body and/or head from specified url
+2014-12-26: Yicheng - URL-to-source code added; returns entire source, body and/or head from specified url
 
-2014-12-27: Yicheng - Tried to implement Reg-Ex to search for head, title, paragraph, body and other stuff, WIP
+2014-12-27: Yicheng - Tried to implement regex to search for head, title, paragraph, body and other stuff, WIP
 
-2015-01-01: Yicheng - Finally fixed reg-ex... adding support for subtitles within the body and better paragraph support, still have to take care of tables and lists
+2015-01-01: Yicheng - Finally fixed regex... adding support for subtitles within the body and better paragraph support, still have to take care of tables and lists
 
-2015-01-06: Dalton - Nothing, but typo correcting
+2015-01-06: Dalton - Nothing but typo correcting
 
-2015-01-06: Yicheng - List-handling class half-working
+2015-01-06: Yicheng - List-handling class half working
 
-2015-01-07: Dalton - Last time I try to fix Yicheng's spelling, made some tables stuff
+2015-01-07: Dalton - <strike>Last time I try to fix Yicheng's spelling,</strike> made some tables stuff
 
-2015-01-12: Yicheng - Finally fixed infinite while loop/recursion problem in list formatter, something is still broken nonetheless.
+2015-01-12: Yicheng - Finally fixed infinite while loop/recursion problem in list formatter; something is still broken nonetheless.
 
-2015-01-14: Yicheng - List formatter completely working, can handel nested lists
+2015-01-14: Yicheng - List formatter completely working, can handle nested lists
 
 2015-01-14: Yicheng - Paragraph formatter done!!!
 
