@@ -45,7 +45,7 @@ ChangeLog
 
 2015-01-06: Yicheng - List-handling class half working
 
-2015-01-07: Dalton - <strike>Last time I try to fix Yicheng's spelling,</strike> made some tables stuff
+2015-01-07: Dalton - <del>Last time</del> <ins>One of many times</ins> I try to fix Yicheng's spelling; made some tables stuff
 
 2015-01-12: Yicheng - Finally fixed infinite while loop/recursion problem in list formatter; something is still broken nonetheless.
 
