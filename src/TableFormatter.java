@@ -29,6 +29,9 @@ public class TableFormatter {
 	Matcher tdEFinder;
 	
 	int thisRowWidth;
+
+	// We know that 8 spaces is a tab, to line stuff up we have to count this!!
+	int tabCount = 1;
 	
 	// Constructor
 	
@@ -67,14 +70,17 @@ public class TableFormatter {
 			tdEFinder = tdPatE.matcher(tableRow);
 			tdEFinder.matches();
 			while(tdSFinder.find() && tdEFinder.find()) {
-			    String element = tableRow.substring(tdSFinder.end(), tdEFinder.start()).trim() + "\t\t\t\t\t\t\t";
-			    if (tdSFinder.group().substring(1,3).equals("th")) {
+			    String element = tableRow.substring(tdSFinder.end(), tdEFinder.start()).trim();
+				if (tdSFinder.group().substring(1,3).equals("th")) {
 				Format elF = new Format(element);
 				elF.setBold();
 				element = elF.getResult();
 			    }
 			    ParagraphFormatter elementFormatter = new ParagraphFormatter(element);
 			    element = elementFormatter.getResult();
+				while ((element.length() / 8) >= tabCount) {
+					tabCount++;
+				}
 			    grid.get(grid.size()-1).add(element); // ugh, there has to be a better way
 			}
 		}
@@ -83,7 +89,18 @@ public class TableFormatter {
 	void blam() {
 	    for(ArrayList<String> foo : grid) {
 		for(String fooPrime : foo) {
-		    result += fooPrime;
+
+			if (foo.indexOf(fooPrime) != (foo.size() - 1)) {
+				result += fooPrime;
+				for (int i = 0 ; i < (tabCount - (fooPrime.length() / 8)) ; i++) {
+					result += "\t";
+				}
+				result += "| ";
+			}
+
+			else {
+				result += fooPrime;
+			}
 		}
 		result += "\n";
 	    }
@@ -95,7 +112,6 @@ public class TableFormatter {
 	}
 	
 	void doStuff() {
-	    System.out.println("WTFFF");
 		this.fillLists();
 		this.blam();
 	}
