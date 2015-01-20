@@ -120,6 +120,13 @@ public class URLtoSource {
 			int initial = paragraphSFinder.end();
 			
 			String pstarter = paragraphSFinder.group();
+
+			while (!(paragraphEFinder.group().substring(2,4).equals(pstarter.substring(1,3)))) {
+				paragraphSFinder.find();
+				paragraphEFinder.find();
+			}
+
+/*
 			int startCounter = 1;
 			int endCounter = 0;
 			
