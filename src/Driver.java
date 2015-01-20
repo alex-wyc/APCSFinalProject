@@ -10,7 +10,7 @@ public class Driver {
 
 		URLtoSource site = null;
 		
-		System.out.println("Welcome to Athenian Rabbit Browser, where would you like to go (URL)?");
+		System.out.println("Welcome to Athenian Rabbit Browser. Where would you like to go (URL)?");
 		String URLStr = sc.nextLine();
 
 		try {
@@ -18,7 +18,7 @@ public class Driver {
 			site = new URLtoSource(URLStr);
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("Formatting not yet implemented, program will now exit");
+			System.out.println("Formatting not yet implemented. Program will now exit");
 			System.exit(1);
 		}
 
