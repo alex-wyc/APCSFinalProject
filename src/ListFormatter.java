@@ -1,7 +1,7 @@
 import java.util.*;
 import java.util.regex.*;
 
-public class ListFormatter{
+public class ListFormatter {
 	
 	// Instance variables
 
@@ -17,10 +17,10 @@ public class ListFormatter{
 		System.out.println(html);
 		System.out.println();
 		if (ordered) {
-			listEls = orderedHandeler(html, 0);
+			listEls = orderedHandler(html, 0);
 		}
 		else {
-			listEls = unOrderedHandeler(html, 0);
+			listEls = unOrderedHandler(html, 0);
 		}
 	}
 
@@ -34,7 +34,7 @@ public class ListFormatter{
 		return removeAllElse(out);
 	}
 
-	private ArrayList<String> orderedHandeler(String html, int index) {
+	private ArrayList<String> orderedHandler(String html, int index) {
 		String preamble = "";
 		for (int i = 0 ; i < index ; i++) {
 			preamble = preamble + "\t";
@@ -65,7 +65,7 @@ public class ListFormatter{
 				int sublistEnd = listElPatFinderE.start();
 
 				// RECURSION!
-				out.addAll(orderedHandeler(html.substring(sublistBegin, sublistEnd), index + 1));
+				out.addAll(orderedHandler(html.substring(sublistBegin, sublistEnd), index + 1));
 			}
 
 			else if (id.substring(0,3).equals("<ul")) {
@@ -80,7 +80,7 @@ public class ListFormatter{
 
 				int sublistEnd = listElPatFinderE.start();
 				// RECURSION!
-				out.addAll(unOrderedHandeler(html.substring(sublistBegin, sublistEnd), index + 1));
+				out.addAll(unOrderedHandler(html.substring(sublistBegin, sublistEnd), index + 1));
 			}
 
 			else {
@@ -96,7 +96,7 @@ public class ListFormatter{
 		return out;
 	}
 
-	private ArrayList<String> unOrderedHandeler(String html, int index) {
+	private ArrayList<String> unOrderedHandler(String html, int index) {
 		String preamble = "";
 		for (int i = 0 ; i < index ; i++) {
 			preamble = preamble + "\t";
@@ -126,7 +126,7 @@ public class ListFormatter{
 				int sublistEnd = listElPatFinderE.start();
 
 				// RECURSION!
-				out.addAll(orderedHandeler(html.substring(sublistBegin, sublistEnd), index + 1));
+				out.addAll(orderedHandler(html.substring(sublistBegin, sublistEnd), index + 1));
 			}
 
 			else if (id.substring(0,3).equals("<ul")) {
@@ -141,7 +141,7 @@ public class ListFormatter{
 
 				int sublistEnd = listElPatFinderE.start();
 				// RECURSION!
-				out.addAll(unOrderedHandeler(html.substring(sublistBegin, sublistEnd), index + 1));
+				out.addAll(unOrderedHandler(html.substring(sublistBegin, sublistEnd), index + 1));
 			}
 
 			else {
