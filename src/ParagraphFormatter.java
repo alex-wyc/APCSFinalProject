@@ -27,7 +27,7 @@ public class ParagraphFormatter {
 
 		result = removeAllElse(result);
 
-		result = handelHTMLChars(result);
+		result = handleHTMLChars(result);
 	}
 
 	// Methods
