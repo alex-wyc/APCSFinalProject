@@ -67,7 +67,7 @@ public class TableFormatter {
 			tdEFinder = tdPatE.matcher(tableRow);
 			tdEFinder.matches();
 			while(tdSFinder.find() && tdEFinder.find()) {
-			    String element = STRING.substring(tdSFinder.end(), tdEFinder.start())+"*";
+			    String element = tableRow.substring(tdSFinder.end(), tdEFinder.start()).trim() + " ";
 			    grid.get(grid.size()-1).add(element); // ugh, there has to be a better way
 			}
 		}
