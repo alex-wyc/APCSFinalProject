@@ -4,9 +4,15 @@ APCSFinalProject
 APCS Final Project - Athenian <sub><sup>Rabbit</sub></sup> <sub><sup><sub><sup>Browser</sub></sup></sub></sup>
 
 File hierarchy:
+---------------
 * A class that connects to specific server
-* A class the translates pieces of html code into 
+* A class the translates pieces of html code into gnome terminal formatting
 
+
+Folder Descriptions:
+--------------------
+* src: the folder that holds the sorce code for the project, run either by ./recompile or javac Driver.java followed by java Driver
+* testCases: the folder that holds websites that actually work, slightly edited --> first line points to the actual url of the website
 
 Random Joke that is SOMEWHAT Approporiate
 =========================================	
@@ -48,6 +54,8 @@ ChangeLog
 2015-01-14: Yicheng - Paragraph formatter done!!!
 
 2015-01-14: Yicheng - Last problem (nested html...) half-working. Discovered <a href="http://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags/1732454#1732454">this...</a>
+
+2015-01-20: Yicheng/Dalton - Table class finally almost working... Finally it prints stuff, just have to fix the indentation.
 
 TO-DO LIST
 ===========
