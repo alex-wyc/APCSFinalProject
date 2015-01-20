@@ -20,10 +20,10 @@ Random Joke that is SOMEWHAT Appropriate
 Top 10 things likely to be overheard from a Klingon Programmer
 
 * Specifications are for the weak and timid!
-* You question the worthiness of my code? I should kill you where you stand!
-* Indentation? I will show you how to indent when I indent your skull!
-* What is this talk of release? Klingons do not <em>release software</em>. Our software <em>ESCAPES</em>, leaving a bloody trail of designers and quality assurance people in its wake.
-* Klingon function calls do not have parameters--they have arguments--and they ALWAYS WIN THEM.
+* You question the worthiness of my code? <em>I should kill you where you stand!</em>
+* Indentation? <em>I will show you how to indent when I indent your skull!</em>
+* What is this talk of release? Klingons do not <em>release</em> software. Our software <em>ESCAPES</em>, leaving a bloody trail of designers and quality assurance people in its wake.
+* Klingon function calls do not have parameters. They have arguments--and they ALWAYS WIN THEM.
 * Debugging? Klingons do not debug. Our software does not coddle the weak.
 * A True Klingon Warrior does not comment in his code!
 * Klingon software does not have BUGS. It has FEATURES, and those features are too sophisticated for a Romulan pig like you to understand.
