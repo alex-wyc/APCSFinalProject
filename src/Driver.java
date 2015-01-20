@@ -10,7 +10,7 @@ public class Driver {
 
 		URLtoSource site = null;
 		
-		System.out.println("Welcom to Athenian Rabbit Browser, where would you like to go (URL)?");
+		System.out.println("Welcome to Athenian Rabbit Browser, where would you like to go (URL)?");
 		String URLStr = sc.nextLine();
 
 		try {
