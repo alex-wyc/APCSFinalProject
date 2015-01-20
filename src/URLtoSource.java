@@ -121,9 +121,14 @@ public class URLtoSource {
 			
 			String pstarter = paragraphSFinder.group();
 
+			int end = paragraphEFinder.start();
+
 			while (!(paragraphEFinder.group().substring(2,4).equals(pstarter.substring(1,3)))) {
+				end = paragraphEFinder.start();
 				paragraphSFinder.find();
-				paragraphEFinder.find();
+				if (!(paragraphEFinder.find())) {
+					break;
+				}
 			}
 
 /*
@@ -150,7 +155,6 @@ public class URLtoSource {
 				paragraphEFinder.find();
 			}
 */
-			int end = paragraphEFinder.start();
 
 			currentParagraph = body.substring(initial, end);
 
