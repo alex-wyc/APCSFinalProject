@@ -11,8 +11,8 @@ File hierarchy:
 
 Folder Descriptions:
 --------------------
-* src: the folder that holds the sorce code for the project, run either by <code>./recompile</code> or javac Driver.java followed by java Driver
-* testCases: the folder that holds websites that actually work, slightly edited --> first line points to the actual url of the website
+* <code>src</code>: the folder that holds the sorce code for the project, run either by <code>./recompile</code> or <code>javac Driver.java</code> followed by <code>java Driver</code>
+* <code>testCases</code>: the folder that holds websites that actually work, slightly edited --> first line points to the actual url of the website
 
 Random Joke that is SOMEWHAT Appropriate
 =========================================	
