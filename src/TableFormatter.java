@@ -16,10 +16,10 @@ public class TableFormatter {
 	
 	Pattern trPatS = Pattern.compile("\\<tr.*?\\>", Pattern.CASE_INSENSITIVE);
 	Pattern trPatE = Pattern.compile("\\</tr\\>", Pattern.CASE_INSENSITIVE);
-	Pattern thPatS = Pattern.compile("\\<th.*?\\>", Pattern.CASE_INSENSITIVE);
-	Pattern thPatE = Pattern.compile("\\</th\\>", Pattern.CASE_INSENSITIVE);
-	Pattern tdPatS = Pattern.compile("\\<td.*?\\>", Pattern.CASE_INSENSITIVE);
-	Pattern tdPatE = Pattern.compile("\\</td\\>", Pattern.CASE_INSENSITIVE);
+//	Pattern thPatS = Pattern.compile("\\<th.*?\\>", Pattern.CASE_INSENSITIVE);
+//	Pattern thPatE = Pattern.compile("\\</th\\>", Pattern.CASE_INSENSITIVE);
+	Pattern tdPatS = Pattern.compile("\\<td.*?\\>|\\<th.*?\\>", Pattern.CASE_INSENSITIVE);
+	Pattern tdPatE = Pattern.compile("\\</td\\>|\\</th\\>", Pattern.CASE_INSENSITIVE);
 	
 	Matcher trSFinder;
 	Matcher trEFinder;
@@ -38,8 +38,8 @@ public class TableFormatter {
 		
 		trSFinder = trPatS.matcher(s);
 		trEFinder = trPatE.matcher(s);
-		thSFinder = thPatS.matcher(s);
-		thEFinder = thPatE.matcher(s);
+//		thSFinder = thPatS.matcher(s);
+//		thEFinder = thPatE.matcher(s);
 
 		grid = new ArrayList<ArrayList<String>>();
 		//grid.add(new ArrayList<String>());
@@ -67,7 +67,14 @@ public class TableFormatter {
 			tdEFinder = tdPatE.matcher(tableRow);
 			tdEFinder.matches();
 			while(tdSFinder.find() && tdEFinder.find()) {
-			    String element = tableRow.substring(tdSFinder.end(), tdEFinder.start()).trim() + " ";
+			    String element = tableRow.substring(tdSFinder.end(), tdEFinder.start()).trim() + "\t\t\t\t\t\t\t";
+			    if (tdSFinder.group().substring(1,3).equals("th")) {
+				Format elF = new Format(element);
+				elF.setBold();
+				element = elF.getResult();
+			    }
+			    ParagraphFormatter elementFormatter = new ParagraphFormatter(element);
+			    element = elementFormatter.getResult();
 			    grid.get(grid.size()-1).add(element); // ugh, there has to be a better way
 			}
 		}
