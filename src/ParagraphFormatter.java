@@ -26,6 +26,8 @@ public class ParagraphFormatter {
 		result = setAllStrikethrough(result);
 
 		result = removeAllElse(result);
+
+		result = handelHTMLChars(result);
 	}
 
 	// Methods
@@ -162,6 +164,10 @@ public class ParagraphFormatter {
 		}
 
 		return output;
+	}
+
+	private String handelHTMLChars(String html) {
+		return html.replaceAll("&ndash;", "-").replaceAll("&mdash;", "--").replaceAll("&quot;|&ldquo;|&rdquo;", "\"").replaceAll("&lsquo;|&rsquo;", "\'").replaceAll("&gt;", ">").replaceAll("&lt;", "<");
 	}
 
 }
