@@ -11,7 +11,7 @@ File hierarchy:
 
 Folder Descriptions:
 --------------------
-* src: the folder that holds the sorce code for the project, run either by ./recompile or javac Driver.java followed by java Driver
+* src: the folder that holds the sorce code for the project, run either by <code>./recompile</code> or javac Driver.java followed by java Driver
 * testCases: the folder that holds websites that actually work, slightly edited --> first line points to the actual url of the website
 
 Random Joke that is SOMEWHAT Appropriate
@@ -22,7 +22,7 @@ Top 10 things likely to be overheard from a Klingon Programmer
 * Specifications are for the weak and timid!
 * You question the worthiness of my code? I should kill you where you stand!
 * Indentation? I will show you how to indent when I indent your skull!
-* What is this talk of release? Klingons do not <em>release software<em>. Our software <em>ESCAPES</em>, leaving a bloody trail of designers and quality assurance people in its wake.
+* What is this talk of release? Klingons do not <em>release software</em>. Our software <em>ESCAPES</em>, leaving a bloody trail of designers and quality assurance people in its wake.
 * Klingon function calls do not have parameters--they have arguments--and they ALWAYS WIN THEM.
 * Debugging? Klingons do not debug. Our software does not coddle the weak.
 * A True Klingon Warrior does not comment in his code!
