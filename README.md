@@ -14,7 +14,7 @@ Folder Descriptions:
 * src: the folder that holds the sorce code for the project, run either by ./recompile or javac Driver.java followed by java Driver
 * testCases: the folder that holds websites that actually work, slightly edited --> first line points to the actual url of the website
 
-Random Joke that is SOMEWHAT Approporiate
+Random Joke that is SOMEWHAT Appropriate
 =========================================	
 
 Top 10 things likely to be overheard from a Klingon Programmer
@@ -22,13 +22,13 @@ Top 10 things likely to be overheard from a Klingon Programmer
 * Specifications are for the weak and timid!
 * You question the worthiness of my code? I should kill you where you stand!
 * Indentation? I will show you how to indent when I indent your skull!
-* What is this talk of release? Klingons do not release software. Our software escapes leaving a bloody trail of designers and quality assurance people in its wake.
-* Klingon function calls do not have parameters - they have arguments - and they ALWAYS WIN THEM.
+* What is this talk of release? Klingons do not <em>release software<em>. Our software <em>ESCAPES</em>, leaving a bloody trail of designers and quality assurance people in its wake.
+* Klingon function calls do not have parameters--they have arguments--and they ALWAYS WIN THEM.
 * Debugging? Klingons do not debug. Our software does not coddle the weak.
-* A True Klingon Warrior does not comment on his code!
+* A True Klingon Warrior does not comment in his code!
 * Klingon software does not have BUGS. It has FEATURES, and those features are too sophisticated for a Romulan pig like you to understand.
 * You cannot truly appreciate Dilbert unless you've read it in the original Klingon.
-* Our users will know fear and cower before our software! Ship it! Ship it and let them flee like the dogs they are!
+* Our users will know fear and cower before our software! Ship it! <b>Ship it and let them flee like the dogs they are!</b>
 
 ChangeLog
 =========
@@ -55,7 +55,7 @@ ChangeLog
 
 2015-01-14: Yicheng - Last problem (nested html...) half-working. Discovered <a href="http://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags/1732454#1732454">this...</a>
 
-2015-01-20: Yicheng/Dalton - Table class finally almost working... Finally it prints stuff, just have to fix the indentation.
+2015-01-20: Yicheng/Dalton - Table class finally almost working... Finally, it prints stuff, just have to fix the indentation.
 
 TO-DO LIST
 ===========
