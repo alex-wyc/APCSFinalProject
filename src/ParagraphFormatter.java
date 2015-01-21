@@ -15,8 +15,12 @@ public class ParagraphFormatter {
 	Pattern deletedElPatS = Pattern.compile("\\<del\\>", Pattern.CASE_INSENSITIVE);
 	Pattern deletedElPatE = Pattern.compile("\\</del\\>", Pattern.CASE_INSENSITIVE);
 
-	Pattern insertedElPatS = Pattern.compile("\\<ins\\>|\\<a.*?\\>", Pattern.CASE_INSENSITIVE);
-	Pattern insertedElPatE = Pattern.compile("\\</ins\\>|\\</a\\>", Pattern.CASE_INSENSITIVE);
+	Pattern insertedElPatS = Pattern.compile("\\<ins\\>", Pattern.CASE_INSENSITIVE);
+	Pattern insertedElPatE = Pattern.compile("\\</ins\\>", Pattern.CASE_INSENSITIVE);
+
+	Pattern hyperlinkedPatS = Pattern.compile("\\<a.*?href.*?\\>", Pattern.CASE_INSENSITIVE);
+	Pattern hyperlinkedPatC = Pattern.compile("\\<a.*?href=\"(.*?)\".*?\\>", Pattern.CASE_INSENSITIVE);
+	Pattern hyperlinkedPatE = Pattern.compile("\\</a\\>", Pattern.CASE_INSENSITIVE);
 
 	// Constructor! (One function that solves everything)
 	public ParagraphFormatter(String html) {
@@ -24,6 +28,7 @@ public class ParagraphFormatter {
 		result = setAllItalic(result); // Apparently not achievable in gnome terminal, someone try this with windows pl0x
 		result = setAllUnderline(result);
 		result = setAllStrikethrough(result);
+		result = hyperlinked(result);
 
 		result = removeAllElse(result);
 
@@ -33,6 +38,39 @@ public class ParagraphFormatter {
 	// Methods
 	public String getResult() {
 		return result;
+	}
+
+	private String hyperlinked(String html) {
+		String output = "";
+
+		Matcher hyperlinkPatFinderS = hyperlinkedPatS.matcher(html);
+		Matcher hyperlinkContent = hyperlinkedPatC.matcher(html);
+		Matcher hyperlinkPatFinderE = hyperlinkedPatE.matcher(html);
+
+		boolean isHyperlink = hyperlinkPatFinderS.find() && hyperlinkPatFinderE.find() && hyperlinkContent.find();
+		int lastIndex = 0;
+
+		if (!(isHyperlink)) {
+			return html;
+		}
+
+		while (isHyperlink) {
+			output = output + html.substring(lastIndex, hyperlinkPatFinderS.start());
+
+			Format toUnderline = new Format(html.substring(hyperlinkPatFinderS.end(), hyperlinkPatFinderE.start()));
+			toUnderline.setUnderline();
+			String hyperlinkTarget = toUnderline.getResult();
+			hyperlinkTarget += " (link:" + hyperlinkContent.group(1) + ") ";
+
+			output = output + hyperlinkTarget;
+			lastIndex = hyperlinkPatFinderE.end();
+
+			isHyperlink = hyperlinkPatFinderS.find() && hyperlinkPatFinderE.find() && hyperlinkContent.find();
+		}
+
+		output += html.substring(lastIndex);
+
+		return output;
 	}
 
 	private String setAllBold(String html) {
