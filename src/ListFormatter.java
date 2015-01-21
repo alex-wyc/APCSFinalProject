@@ -14,8 +14,6 @@ public class ListFormatter {
 	// Constructors
 
 	public ListFormatter(String html, boolean ordered) {
-		System.out.println(html);
-		System.out.println();
 		if (ordered) {
 			listEls = orderedHandler(html, 0);
 		}
@@ -97,7 +95,7 @@ public class ListFormatter {
 	}
 
 	private ArrayList<String> unOrderedHandler(String html, int index) {
-		System.out.println(html);
+//		System.out.println(html);
 		String preamble = "";
 		for (int i = 0 ; i < index ; i++) {
 			preamble = preamble + "\t";
@@ -134,6 +132,7 @@ public class ListFormatter {
 				int sublistBegin = listElPatFinderS.end();
 
 				while (!(listElPatFinderE.group().substring(0,4).equals("</ul"))) {
+//					System.out.println("\ngroup: " + listElPatFinderE.group() + "\n");
 					listElPatFinderS.find();
 					listElPatFinderE.find();
 					// We skip over the content of the sublist
@@ -145,7 +144,15 @@ public class ListFormatter {
 			}
 
 			else {
-				// If this is a normal string
+				// If this is a normal string --> apparently weirdos at wikipedia write like the following:
+				//<ul>
+				//<li>History
+				//<ul>
+				//<li>Early History</li>
+				//</ul>
+				//</li>
+				//</ul>
+				//HOW TO DEAL WITH THIS?!?!
 				String content = html.substring(listElPatFinderS.end(), listElPatFinderE.start());
 				out.add(preamble + " " + content);
 			}
