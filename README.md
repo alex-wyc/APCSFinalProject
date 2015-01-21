@@ -64,4 +64,6 @@ TO-DO LIST
 - [x] A list-handling class (Yicheng)
 - [ ] A table-handling class
 - [x] A paragraph formatter (Yicheng)
+- [x] A whole load of HTML codes using (<code>org.apache.commons.lang3.StringEscapeUtils</code>)
 - [x] A hyperlink-handling class (kinda)
+
