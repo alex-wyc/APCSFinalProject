@@ -168,7 +168,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <td><a href="http://nethackwiki.com/wiki/Iron" title="Iron">iron</a>
 </td></tr></tbody></table>
 </div>
-<p><b>ORIGINAL WEBSITE: </b><em>http://nethackwiki.com/wiki/Stormbringer</em></p>
+<p><b>ORIGINAL WEBSITE:</b><em>http://nethackwiki.com/wiki/Stormbringer</em></p>
 <p><b>Stormbringer</b> is a <a href="http://nethackwiki.com/wiki/Chaotic" title="Chaotic" class="mw-redirect">chaotic</a> <a href="http://nethackwiki.com/wiki/Artifact" title="Artifact">artifact</a>, as well as the only <a href="http://nethackwiki.com/wiki/Runesword" title="Runesword">runesword</a> normally generated in the game. It is considered a broadsword for <a href="http://nethackwiki.com/wiki/Skill" title="Skill">skill</a>
  purposes. It drains life from monsters it attacks ("The black blade 
 draws the life from &lt;monster&gt;!"), healing you for a few <a href="http://nethackwiki.com/wiki/Hit_points" title="Hit points">hit points</a> per attack. It is <i>bloodthirsty</i>,

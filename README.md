@@ -30,7 +30,7 @@ Top 10 things likely to be overheard from a Klingon Programmer
 * You cannot truly appreciate Dilbert unless you've read it in the original Klingon.
 * Our users will know fear and cower before our software! Ship it! <b>Ship it and let them flee like the dogs they are!</b>
 
-ChangeLog
+Work Log
 =========
 
 2014-12-22: Yicheng - Basic formatting class added, can read color, bold, italic, underline and strikethrough
@@ -57,9 +57,11 @@ ChangeLog
 
 2015-01-20: Yicheng/Dalton - Table class finally almost working... Finally, it prints stuff, just have to fix the indentation.
 
+2015-01-20: Yicheng - FINALLY fixed the nested html problem, so very happy, the browser can finally open <a href="http://nethackwiki.com/wiki/Scroll">this</a> correctly. Also some basic boardering stuff added. Also, basic hyperlink stuff added
+
 TO-DO LIST
 ===========
 - [x] A list-handling class (Yicheng)
 - [ ] A table-handling class
 - [x] A paragraph formatter (Yicheng)
-- [ ] A hyperlink-handling class
+- [x] A hyperlink-handling class (kinda)
