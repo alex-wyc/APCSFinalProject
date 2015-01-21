@@ -122,7 +122,7 @@ public class URLtoSource {
 			String pstarter = paragraphSFinder.group();
 
 			int end = paragraphEFinder.start();
-
+/*
 			while (!(paragraphEFinder.group().substring(2,4).equals(pstarter.substring(1,3)))) {
 				end = paragraphEFinder.start();
 				paragraphSFinder.find();
@@ -130,31 +130,40 @@ public class URLtoSource {
 					break;
 				}
 			}
+*/
 
-/*
 			int startCounter = 1;
 			int endCounter = 0;
+
+			boolean SI = true;
+			boolean EI = true;
 			
 			// Nested html = pestilance urafjkfhkajhf
 			// Problem: cannot distinguish between consecutive and nested statements!!??!#fajksdgf
-/*
-			while (startCounter != endCounter) {
+
+			while ((startCounter != endCounter) && pFind) {
 				System.out.println(startCounter + ", " + endCounter);
 				System.out.println(pstarter + ", " + paragraphEFinder.group());
-
-				paragraphSFinder.find();
-
-				if (paragraphSFinder.group().substring(1,3).equals(pstarter.substring(1,3))) {
-						startCounter++;
-				}
+				SI = paragraphSFinder.find();
 
 				if (paragraphEFinder.group().substring(2,4).equals(pstarter.substring(1,3))) {
 					endCounter++;
+					end = paragraphEFinder.start();
 				}
 
-				paragraphEFinder.find();
+				if (SI) {
+
+					if (paragraphSFinder.group().substring(1,3).equals(pstarter.substring(1,3)) && paragraphSFinder.start() < paragraphEFinder.start()) {
+						startCounter++;
+					}
+
+				}
+
+				EI = paragraphEFinder.find();
+
+				pFind = EI && SI;
 			}
-*/
+
 
 			currentParagraph = body.substring(initial, end);
 
@@ -197,7 +206,8 @@ public class URLtoSource {
             }
 
 			paragraphs.add(currentParagraph);
-			pFind = paragraphSFinder.find() && paragraphEFinder.find();
+
+			//pFind = paragraphSFinder.find() && paragraphEFinder.find();
 		
 		}
 	}

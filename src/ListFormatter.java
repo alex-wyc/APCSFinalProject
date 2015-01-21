@@ -97,6 +97,7 @@ public class ListFormatter {
 	}
 
 	private ArrayList<String> unOrderedHandler(String html, int index) {
+		System.out.println(html);
 		String preamble = "";
 		for (int i = 0 ; i < index ; i++) {
 			preamble = preamble + "\t";
@@ -135,7 +136,6 @@ public class ListFormatter {
 				while (!(listElPatFinderE.group().substring(0,4).equals("</ul"))) {
 					listElPatFinderS.find();
 					listElPatFinderE.find();
-
 					// We skip over the content of the sublist
 				}
 
