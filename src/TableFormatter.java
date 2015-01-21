@@ -78,9 +78,9 @@ public class TableFormatter {
 			    }
 			    ParagraphFormatter elementFormatter = new ParagraphFormatter(element);
 			    element = elementFormatter.getResult();
-				while ((element.length() / 8) >= tabCount) {
+				/*while ((element.length() / 8) >= tabCount) {
 					tabCount++;
-				}
+				}*/
 			    grid.get(grid.size()-1).add(element); // ugh, there has to be a better way
 			}
 		}
@@ -106,8 +106,8 @@ public class TableFormatter {
 	    }
 	}
 
-	int tableWidth() {
-		int w = 0;
+	int tableWidth(int col) {
+		
 		return w;
 	}
 	
