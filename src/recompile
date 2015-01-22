@@ -1,3 +1,3 @@
 rm *.class
-javac Driver.java
+javac -cp .:commons-lang3-3.3.2.jar Driver.java
 java Driver

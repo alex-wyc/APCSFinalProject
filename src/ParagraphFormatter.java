@@ -1,5 +1,6 @@
 import java.util.*;
 import java.util.regex.*;
+import org.apache.commons.lang3.StringEscapeUtils;
 
 public class ParagraphFormatter {
 	// Variables
@@ -205,7 +206,8 @@ public class ParagraphFormatter {
 	}
 
 	private String handleHTMLChars(String html) {
-		return html.replaceAll("&ndash;", "-").replaceAll("&mdash;", "--").replaceAll("&quot;|&ldquo;|&rdquo;", "\"").replaceAll("&lsquo;|&rsquo;", "\'").replaceAll("&gt;", ">").replaceAll("&lt;", "<");
+		//return html.replaceAll("&ndash;", "-").replaceAll("&mdash;", "--").replaceAll("&quot;|&ldquo;|&rdquo;", "\"").replaceAll("&lsquo;|&rsquo;", "\'").replaceAll("&gt;", ">").replaceAll("&lt;", "<");
+		return new StringEscapeUtils().unescapeHtml4(html);
 	}
 
 }

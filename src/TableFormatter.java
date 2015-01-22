@@ -107,8 +107,13 @@ public class TableFormatter {
 	}
 
 	int tableWidth(int col) {
-		
-		return w;
+		int maxWidthInThisCol = 0;
+		for (ArrayList<String> foo : grid) {
+		    if (foo.get(col).length() > maxWidthInThisCol) {
+			maxWidthInThisCol = foo.get(col).length();
+		    }
+		}
+		return maxWidthInThisCol;
 	}
 	
 	void doStuff() {
