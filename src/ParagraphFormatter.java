@@ -1,6 +1,6 @@
 import java.util.*;
 import java.util.regex.*;
-import org.apache.commons.lang3.StringEscapeUtils;
+import org.apache.commons.lang3.*;
 
 public class ParagraphFormatter {
 	// Variables
