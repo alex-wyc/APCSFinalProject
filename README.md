@@ -1,9 +1,9 @@
 APCSFinalProject
 ================
 
-![alt text][logo]
+![Athenian Rabbit Browser Logo][Athenian Rabbit Browser]
 
-[logo]: https://raw.githubusercontent.com/alex-wyc/APCSFinalProject/master/AthenianRabbitBrowser.gif "Logo"
+[Athenian Rabbit Browser]: https://raw.githubusercontent.com/alex-wyc/APCSFinalProject/master/AthenianRabbitBrowser.gif "Logo"
 
 APCS Final Project - Athenian <sub><sup>Rabbit</sub></sup> <sub><sup><sub><sup>Browser</sub></sup></sub></sup>
 
