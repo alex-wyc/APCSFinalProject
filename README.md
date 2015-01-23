@@ -10,20 +10,20 @@ APCS Final Project - Athenian <sub><sup>Rabbit</sub></sup> <sub><sup><sub><sup>B
 Project Description:
 --------------------
 
-In this project, we attempt to write a html parser with the aid of regular expressions in java.
+In this project, we attempt to write an HTML parser with the aid of regular expressions in java.
 
-I understand that it is impossible to write a full html parser with just regular expressions, as demonstrated by 
+We understand that it is impossible to write a full HTML parser with just regular expressions, as demonstrated by 
 <a href="http://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags/1732454#1732454">this post on stackoverflow</a>
 
-However, the project can open a lot of simple (well-written) websites effectively. It has a working list formatter which can handel sublists,
-a working table formatter and paragraph formatter. It also converts html symbols into ascii/unicode symbols with the aid of
+However, the project can open a lot of simple (well-written) websites effectively. It has a working list formatter which can handle sublists,
+table formatter, and paragraph formatter. It also converts HTML symbols into ASCII/Unicode symbols with the aid of
 <a href="http://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/StringEscapeUtils.html">this apache patch</a>.
 
 Websites that it can open correctly and effectively include:
 * http://nethackwiki.com/wiki/Main_Page and literally everything on the nethackwiki
-* The non-js loading part of http://www.sciencemag.org/
-* Facebook doesn't "load" per-se, but it does not crash either.
-* Google loads and tells you to install google chrome
+* The non-JS loading part of http://www.sciencemag.org/
+* Facebook doesn't "load" per se, but it does not crash either.
+* Google loads and tells you to install Google Chrome
 
 File hierarchy:
 ---------------
@@ -33,7 +33,7 @@ File hierarchy:
 
 Folder Descriptions:
 --------------------
-* <code>src</code>: the folder that holds the source code for the project, run either by <code>./recompile</code> or <code>javac Driver.java</code> followed by <code>java Driver</code>
+* <code>src</code>: the folder that holds the source code for the project. <b>Note: execute the script <code>RUN</code> to open the browser.</b>
 
 Work Log
 --------
