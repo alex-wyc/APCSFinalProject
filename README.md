@@ -67,3 +67,7 @@ TO-DO LIST
 - [x] A whole load of HTML codes using (<code>org.apache.commons.lang3.StringEscapeUtils</code>)
 - [x] A hyperlink-handling class (kinda)
 
+REMOVED FILES (for internal use)
+================================
+- <code>log1.log</code>
+- Everything in <code>GUI1</code> except for our new logo / icon
