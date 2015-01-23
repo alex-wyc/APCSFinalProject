@@ -7,16 +7,6 @@ APCSFinalProject
 
 APCS Final Project - Athenian <sub><sup>Rabbit</sub></sup> <sub><sup><sub><sup>Browser</sub></sup></sub></sup>
 
-File hierarchy:
----------------
-* A class that connects to specific server
-* A class the translates pieces of html code into gnome terminal formatting
-
-
-Folder Descriptions:
---------------------
-* <code>src</code>: the folder that holds the source code for the project, run either by <code>./recompile</code> or <code>javac Driver.java</code> followed by <code>java Driver</code>
-
 Project Description:
 --------------------
 
@@ -32,9 +22,18 @@ a working table formatter and paragraph formatter. It also converts html symbols
 Websites that it can open correctly and effectively include:
 * http://nethackwiki.com/wiki/Main_Page and literally everything on the nethackwiki
 
+File hierarchy:
+---------------
+* A class that connects to specific server
+* A class the translates pieces of html code into gnome terminal formatting
+
+
+Folder Descriptions:
+--------------------
+* <code>src</code>: the folder that holds the source code for the project, run either by <code>./recompile</code> or <code>javac Driver.java</code> followed by <code>java Driver</code>
 
 Work Log
-=========
+--------
 
 2014-12-22: Yicheng - Basic formatting class added, can read color, bold, italic, underline and strikethrough
 
@@ -65,15 +64,15 @@ Work Log
 2015-01-22: Yicheng/Dalton - Finishing touches, try-catch with system default browser option added.
 
 TO-DO LIST
-===========
-- [x] A list-handling class (Yicheng)
-- [ ] A table-handling class
-- [x] A paragraph formatter (Yicheng)
+----------
+- [x] A list-handling class
+- [x] A table-handling class
+- [x] A paragraph formatter
 - [x] A whole load of HTML codes using (<code>org.apache.commons.lang3.StringEscapeUtils</code>)
 - [x] A hyperlink-handling class (kinda)
 
 And as always, a good joke:
-=========================================	
+---------------------------
 
 Top 10 things likely to be overheard from a Klingon Programmer
 
