@@ -21,6 +21,9 @@ a working table formatter and paragraph formatter. It also converts html symbols
 
 Websites that it can open correctly and effectively include:
 * http://nethackwiki.com/wiki/Main_Page and literally everything on the nethackwiki
+* The non-js loading part of http://www.sciencemag.org/
+* Facebook doesn't "load" per-se, but it does not crash either.
+* Google loads and tells you to install google chrome
 
 File hierarchy:
 ---------------
