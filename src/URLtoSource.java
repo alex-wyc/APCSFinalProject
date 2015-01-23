@@ -44,7 +44,7 @@ public class URLtoSource {
 			String inputLine;
 			
 			while ((inputLine = br.readLine()) != null) {
-				source = source + " " + inputLine.replaceAll("\t", "");
+				source = source + " " + inputLine.replaceAll("\t", "").replaceAll("<br>", "\n");
 			}
 
 			source = source.replace("  ", " ");
@@ -120,6 +120,7 @@ public class URLtoSource {
 			int initial = paragraphSFinder.end();
 			
 			String pstarter = paragraphSFinder.group();
+			System.out.println(pstarter);
 
 			int end = paragraphEFinder.start();
 /*
@@ -161,13 +162,17 @@ public class URLtoSource {
 
 				EI = paragraphEFinder.find();
 
+				System.out.println("SI: " + SI + ", EI: " + EI);
+
 				pFind = EI && SI;
 			}
 
 
 			currentParagraph = body.substring(initial, end);
+			System.out.println(currentParagraph);
 
 			if (pstarter.substring(0,2).equals("<p")) {
+				System.out.println("YOOOOOOOOO");
 				ParagraphFormatter pf = new ParagraphFormatter(currentParagraph);
 				currentParagraph = pf.getResult();
 			}

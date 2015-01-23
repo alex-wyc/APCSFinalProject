@@ -128,7 +128,7 @@ public class ListFormatter {
 	}
 
 	private ArrayList<String> unOrderedHandler(String html, int index) {
-		System.out.println(html);
+//		System.out.println(html);
 		String preamble = "";
 		for (int i = 0 ; i < index ; i++) {
 			preamble = preamble + "\t";

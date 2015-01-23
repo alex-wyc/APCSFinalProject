@@ -38,6 +38,7 @@ public class ParagraphFormatter {
 
 	// Methods
 	public String getResult() {
+		System.out.println(result);
 		return result;
 	}
 
