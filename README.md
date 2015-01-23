@@ -26,7 +26,7 @@ Websites that it can open correctly and effectively include:
 * Google loads and tells you to install Google Chrome
 
 To Open:
-========
+--------
 
 * Execute the script <code>RUN</code> found in <code>/src/</code>.
 
