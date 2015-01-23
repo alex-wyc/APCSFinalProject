@@ -22,7 +22,7 @@ public class Driver {
 			System.exit(1);
 		}
 
-		clearScreen();
+//		clearScreen();
 
 		//System.out.println(site.getSource());
 
