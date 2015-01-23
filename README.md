@@ -76,7 +76,7 @@ TO-DO LIST
 - [x] A list-handling class
 - [x] A table-handling class
 - [x] A paragraph formatter
-- [x] A whole load of HTML codes using (<code>org.apache.commons.lang3.StringEscapeUtils</code>)
+- [x] Unescape a whole load of HTML codes using <code>org.apache.commons.lang3.StringEscapeUtils</code>
 - [x] A hyperlink-handling class (kinda)
 
 Sources Cited
