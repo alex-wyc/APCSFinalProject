@@ -71,6 +71,10 @@ TO-DO LIST
 - [x] A whole load of HTML codes using (<code>org.apache.commons.lang3.StringEscapeUtils</code>)
 - [x] A hyperlink-handling class (kinda)
 
+Sources Cited
+--------------
+Apache HTML code translator: http://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/StringEscapeUtils.html
+
 And as always, a good joke:
 ---------------------------
 
