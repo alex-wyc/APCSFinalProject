@@ -25,6 +25,11 @@ Websites that it can open correctly and effectively include:
 * Facebook doesn't "load" per se, but it does not crash either.
 * Google loads and tells you to install Google Chrome
 
+To Open:
+========
+
+* Execute the script <code>RUN</code> found in <code>/src/</code>.
+
 File hierarchy:
 ---------------
 * A class that connects to specific server
