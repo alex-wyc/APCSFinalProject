@@ -10,12 +10,12 @@ public class AthenianRabbitBrowser {
 		
 		clearScreen();
 		
-		//URLtoSource site = null;
+		URLtoSource site = null;
 		
 		System.out.println("Welcome to Athenian Rabbit Browser. Where would you like to go (URL)?");
 		String URLStr = sc.nextLine();
 		
-		/*try {
+		try {
 			System.out.println("Loading...");
 			site = new URLtoSource(URLStr);
 			
@@ -33,7 +33,7 @@ public class AthenianRabbitBrowser {
 				System.out.println(p);
 				System.out.println();
 			}
-		} catch (Exception e) {*/
+		} catch (Exception e) {
 		    try {
 			Desktop.getDesktop().browse(new URI(URLStr));
 		    } catch (Exception f) {
@@ -41,7 +41,7 @@ public class AthenianRabbitBrowser {
 			f.printStackTrace();
 			System.exit(1);
 		    }
-		//}
+		}
 	}
 	
 	public static void clearScreen() {
