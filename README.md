@@ -28,7 +28,7 @@ Websites that it can open correctly and effectively include:
 To Open:
 --------
 
-* Execute the script <code>RUN</code> found in <code>/src/</code>.
+* Execute the script <code>RUN</code> found in <code>src/</code>.
 
 File hierarchy:
 ---------------
@@ -36,9 +36,17 @@ File hierarchy:
 * A class the translates pieces of html code into gnome terminal formatting
 
 
-Folder Descriptions:
+Content Descriptions:
 --------------------
-* <code>src</code>: the folder that holds the source code for the project. <b>Note: execute the script <code>RUN</code> to open the browser.</b>
+* <code>AthenianRabbitBrowser.gif</code>: our glorious logo.
+* <code>.gitignore</code>: no longer ignores <code>.jar</code> files.
+* <code>src/</code>: the folder that holds the source code for the project.
+* <code>src/RUN</code>: <b>important—the script used to run the browser</b>.
+* <code>src/AthenianRabbitBrowser.java</code>: the Driver we're using.
+* <code>src/Driver.java</code>: for debug purposes.
+* <code>src/URLtoSource.java</code>: 
+* <code>src/ListFormatter.java</code>: list formatter
+* <code>src/ParagraphFormatter.java</code>: "paragraph" formatter
 
 Work Log
 --------
