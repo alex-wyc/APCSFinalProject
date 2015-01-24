@@ -38,15 +38,18 @@ File hierarchy:
 
 Content Descriptions:
 --------------------
-* <code>AthenianRabbitBrowser.gif</code>: our glorious logo.
-* <code>.gitignore</code>: no longer ignores <code>.jar</code> files.
-* <code>src/</code>: the folder that holds the source code for the project.
-* <code>src/RUN</code>: <b>important—the script used to run the browser</b>.
-* <code>src/AthenianRabbitBrowser.java</code>: the Driver we're using.
-* <code>src/Driver.java</code>: for debug purposes.
-* <code>src/URLtoSource.java</code>: 
-* <code>src/ListFormatter.java</code>: list formatter
-* <code>src/ParagraphFormatter.java</code>: "paragraph" formatter
+* <code>AthenianRabbitBrowser.gif</code>  our glorious logo.
+* <code>.gitignore</code>  no longer ignores <code>.jar</code> files.
+* <code>src/</code>  the folder that holds the source code for the project.
+* <code>src/RUN</code>  <b>important—the script used to run the browser</b>.
+* <code>src/recompile</code>  the script we use to run <code>Driver.java</code>
+* <code>src/AthenianRabbitBrowser.java</code>  the final version of the Driver we're using (instead of printing errors, it initiates a backup plan).
+* <code>src/Driver.java</code>  older version for debug purposes (prints errors).
+* <code>src/URLtoSource.java</code>  takes HTML webpage code and pulls it apart for formatting.
+* <code>src/Format.java</code>  basic methods for font color, bold, underline, italics, strikethrough, etc.
+* <code>src/ListFormatter.java</code>  list formatter.
+* <code>src/ParagraphFormatter.java</code>  "paragraph" (does not handle only <p> blocks) formatter, which also handles HTML escape characters
+* <code>src/TableFormatter.java</code>  table formatter.
 
 Work Log
 --------
